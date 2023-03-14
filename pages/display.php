@@ -68,6 +68,6 @@
         </div>
         <!-- footer -->
         <?php
-        include_once("../pages/footer.php");
+        include_once("../pages/footer.php") ;
         ?>
 </body>
