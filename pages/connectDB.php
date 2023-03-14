@@ -13,9 +13,8 @@ class DB_conn
 
         if ($conn === false) {
             die("ERROR : Could not connect. " . mysqli_connect_error());;
-        } else {
-            echo "Connect Success!";
-        }
+        } 
+        
     }
 
     function insert_user(/*$fname, $lname, $mname, $telephone, $username, $password, $type*/ $id, $user, $pass, $first, $last, $tele)
