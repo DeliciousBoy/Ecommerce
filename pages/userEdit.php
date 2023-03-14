@@ -31,7 +31,7 @@
             </div>
             <div class="mb-3">
                 <label for="username" class="form-label">User Name:</label>
-                <input type="text" class="form-control" id="uname" name="uname" disabled value=<?php echo $uname; ?>>
+                <input type="text" class="form-control" id="uname" name="uname" value=<?php echo $uname; ?>>
             </div>
             <button type="submit" class="btn btn-primary" id="edit" name="edit">บันทึกการเปลี่ยนแปลง </button>
         </form>
