@@ -52,7 +52,7 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="password" name="password" placeholder="password" required = 'required' oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
+                            <input type="text" class="form-control" id="password" name="password" placeholder="password" required oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
