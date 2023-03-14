@@ -28,7 +28,6 @@
     <!-- header -->
     <?php
     include_once("../pages/topbar.php");
-    include_once("../pages/navigation.php");
     ?>
     <!-- header -->
     <div class="container-fluid pt-5">
@@ -41,29 +40,25 @@
                     <div id="success"></div>
                     <form name="user" id="user" novalidate="novalidate" action="insert_user.php" method="post">
                         <div class="control-group">
-                            <input type="text" class="form-control" id="id" name="id" placeholder="id" required="required" data-validation-required-message="Please enter your first name" />
+                            <input type="email" class="form-control" id="first_name" name="first_name" placeholder="first name" required oninvalid="setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="username" required="required" data-validation-required-message="Please enter your last name" />
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last name" required oninvalid="setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="password" name="password" placeholder="password" data-validation-required-message="Please enter your middle name" />
+                            <input type="text" class="form-control" id="username" name="username" placeholder="username" required oninvalid="setCustomValidity('Please enter your username name')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="email" class="form-control" id="first_name" name="first_name" placeholder="first name" required="required" data-validation-required-message="Please enter your email" />
+                            <input type="text" class="form-control" id="password" name="password" placeholder="password" required oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last name" required="required" data-validation-required-message="Please enter your username" />
+                            <input type="password" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" required oninvalid="setCustomValidity('Please enter your telephone number')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
-                </div>
-                <div class="control-group">
-                    <input type="password" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" required="required" data-validation-required-message="Please enter yout password" />
-                    <p class="help-block text-danger"></p>
                 </div>
                 <div>
                     <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
