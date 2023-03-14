@@ -1,36 +1,28 @@
-<?php
 include_once('connectDB.php');
 $conn = new DB_conn;
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
-<head>
-    <title>Minishop - Free Bootstrap 4 Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+th, td{
+  text-align: center;
+  padding: 8px;
+}
+th {
+  background-color: #00CB3D;
+  color: white;
+}
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+tr:nth-child(odd) {
+  background-color: #DAFFE9;
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+}
+</style>
 
 <body>
     <?php
@@ -42,9 +34,9 @@ $conn = new DB_conn;
                 <table class="table table-bordered text-center mb-0">
                     <thead class="bg-secondary text-dark">
                         <tr>
-                            <td colspan="7">
+                            <th colspan="7">
                                 <h3>ข้อมูล สมาชิก</h3>
-                            </td>
+                            </th>
                         </tr>
                         <tr>
                             <th>ลําดับ</th>

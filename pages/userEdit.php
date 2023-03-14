@@ -26,12 +26,12 @@
                 <input type="text" class="form-control" id="lname" name="lname" value=<?php echo $lname ?>>
             </div>
             <div class="mb-3">
-                <label for="username" class="form-label">User Name:</label>
+                <label for="uname" class="form-label">UserName:</label>
                 <input type="text" class="form-control" id="uname" name="uname" value=<?php echo $uname; ?>>
             </div>
             <div class="mb-3">
                 <label for="telephone" class="form-label">telephone: </label>
-                <input type="telephone" class="form-control" id="telephone" name="telephone" value=<?php echo $telephone; ?>>
+                <input type="int" class="form-control" id="telephone" name="telephone" value=<?php echo $telephone; ?>>
             </div>
             <button type="submit" class="btn btn-primary" id="edit" name="edit">บันทึกการเปลี่ยนแปลง </button>
         </form>
@@ -42,8 +42,9 @@
     if (isset($_POST['edit'])) {
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
+        $uname = $_post['uname'];
         $telephone = $_POST['telephone'];
-        $sql = $conn->edit_user($fname, $lname, $telephone, $id);
+        $sql = $conn->edit_user($fname, $lname,$uname, $telephone, $id);
         echo $sql;
         if ($sql) {
             echo "<script>alert('บันทึกข้อมูลสําเร็จ')</script>";
