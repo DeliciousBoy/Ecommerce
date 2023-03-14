@@ -55,6 +55,9 @@ class DB_conn
         $str = mysqli_query($this->conn,$strSQL);
         return $str;
     }
+    
+
+    
 
 }
 
