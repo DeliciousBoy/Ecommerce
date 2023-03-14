@@ -27,8 +27,8 @@
 <body>
     <!-- header -->
     <?php
-    include_once("../page/topbar.php");
-    include_once("../page/navigation.php");
+    include_once("../pages/topbar.php");
+    include_once("../pages/navigation.php");
     ?>
     <!-- header -->
     <div class="container-fluid pt-5">
@@ -74,6 +74,6 @@
         </div>
         <!-- footer -->
         <?php
-        include_once("../page/footer.php");
+        include_once("../pages/footer.php");
         ?>
 </body>
