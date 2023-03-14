@@ -47,7 +47,7 @@
         echo $sql;
         if ($sql) {
             echo "<script>alert('บันทึกข้อมูลสําเร็จ')</script>";
-            echo "<script>window.location.href='display_user.php' </script>";
+            echo "<script>window.location.href='display.php' </script>";
         } else {
             echo "<script>alert('เกิดข้อผิดพลาด')</script>";
         }
