@@ -53,11 +53,11 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="email" class="form-control" id="first_name" name="first_name" placeholder="first_name" required="required" data-validation-required-message="Please enter your email" />
+                            <input type="email" class="form-control" id="first_name" name="first_name" placeholder="first name" required="required" data-validation-required-message="Please enter your email" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last_name" required="required" data-validation-required-message="Please enter your username" />
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last name" required="required" data-validation-required-message="Please enter your username" />
                             <p class="help-block text-danger"></p>
                         </div>
                 </div>
