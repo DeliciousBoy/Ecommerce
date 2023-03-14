@@ -40,7 +40,7 @@ class DB_conn
     }
     public function del_user($id)
     {
-        $str = mysqli_query($this->conn, "DELETE FROM user WHERE user_ID = $id ");
+        $str = mysqli_query($this->conn, "DELETE FROM user WHERE id = $id ");
         return $str;
     }
     // ---------------------products --------------------
