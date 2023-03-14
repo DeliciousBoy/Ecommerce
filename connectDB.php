@@ -20,7 +20,7 @@ class DB_conn
 
     function insert_user(/*$fname, $lname, $mname, $email, $username, $password, $type*/ $id, $user, $pass, $first, $last, $tele)
     {
-        $sql = "insert into member(	id	,username	,password	,first_name	,last_name	,telephone)
+        $sql = "insert into user(	id	,username	,password	,first_name	,last_name	,telephone)
             values('$id', '$user', '$pass', '$first', '$last', '$tele')";
         return ($sql);
     }
