@@ -28,7 +28,6 @@
     <!-- header -->
     <?php
     include_once("../pages/topbar.php");
-    
     ?>
     <!-- header -->
     <div class="container-fluid pt-5">
@@ -53,7 +52,7 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="password" name="password" placeholder="password" required oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
+                            <input type="text" class="form-control" id="password" name="password" placeholder="password" required = 'required' oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
@@ -65,19 +64,10 @@
                         </div>
                     </form>
                 </div>
-                <div class="control-group">
-                    <input type="password" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" required="required" data-validation-required-message="Please enter yout password" />
-                    <p class="help-block text-danger"></p>
-                </div>
-                 <div>
-                    <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
-                        Message</button>
-                </div>
-                </form>
             </div>
         </div>
         <!-- footer -->
         <?php
-        include_once("../pages/footer.php") ;
+        include_once("../pages/footer.php");
         ?>
 </body>
