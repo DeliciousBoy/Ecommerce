@@ -23,7 +23,7 @@ if($sql){
     echo "<script>window.location.href='login.php' </script>";
     } else {
         echo "<script>alert('เกิดข้อผิดพลาด')</script>";
- echo "<script>window.location.href='register.php' </script>";
+ echo "<script>window.location.href='signup.php' </script>";
  }
    
 
