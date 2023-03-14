@@ -59,12 +59,11 @@
                             <input type="password" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" required oninvalid="setCustomValidity('Please enter your telephone number')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
+                        <div>
+                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send Message</button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send
-                        Message</button>
-                </div>
-                </form>
             </div>
         </div>
         <!-- footer -->
