@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<div id="success"></div >
 					<form name="user" id="user" novalidate="novalidate" action="insert_user.php" method="post" text-align: center;>
 						<div class="control-group">
-							<input type="email" class="form-control" id="first_name" name="first_name" placeholder="first name" required oninvalid="setCustomValidity('Please enter your first name')"  oninput="setCustomValidity('')" />
+							<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first name" required oninvalid="setCustomValidity('Please enter your first name')"  oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="control-group">
@@ -85,11 +85,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="control-group">
-							<input type="text" class="form-control" id="password" name="password" placeholder="password" required oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
+							<input type="password" class="form-control" id="password" name="password" placeholder="password" required oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="control-group">
-							<input type="password" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" required oninvalid="setCustomValidity('Please enter your telephone number')" oninput="setCustomValidity('')" />
+							<input type="int" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" required oninvalid="setCustomValidity('Please enter your telephone number')" oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div>
@@ -101,7 +101,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		</div>
 		<!-- footer -->
 		<?php
-		include_once("../pages/footer.php");
+		include_once("../pages/footer.php") ;
 		?>
+
+
+
 </body>
+
 </html>

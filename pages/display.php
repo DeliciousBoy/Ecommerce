@@ -1,73 +1,83 @@
+<?php
+include_once('connectDB.php');
+$conn = new DB_conn;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <title>Minishop - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Favicon -->
-    <link href="../img/favicon.ico" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-    <!-- Libraries Stylesheet -->
-    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/aos.css">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- header -->
     <?php
-    include_once("../pages/topbar.php");
+    include_once('../pages/topbar.php');
     ?>
-    <!-- header -->
-    <div class="container-fluid pt-5">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Enter User</span></h2>
-        </div>
-        <div class="row px-xl-5">
-            <div class="col-lg-7 mb-5">
-                <div class="contact-form">
-                    <div id="success"></div>
-                    <form name="user" id="user" novalidate="novalidate" action="insert_user.php" method="post">
-                        <div class="control-group">
-                            <input type="email" class="form-control" id="first_name" name="first_name" placeholder="first name" required oninvalid="setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last name" required oninvalid="setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="username" required oninvalid="setCustomValidity('Please enter your username name')" oninput="setCustomValidity('')" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <input type="text" class="form-control" id="password" name="password" placeholder="password" required oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="control-group">
-                            <input type="password" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" required oninvalid="setCustomValidity('Please enter your telephone number')" oninput="setCustomValidity('')" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div>
-                            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send Message</button>
-                        </div>
-                    </form>
-                </div>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-lg-8 table-responsive mb-5">
+                <table class="table table-bordered text-center mb-0">
+                    <thead class="bg-secondary text-dark">
+                        <tr>
+                            <td colspan="7">
+                                <h3>ข้อมูล สมาชิก</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>ลําดับ</th>
+                            <th>ชื่อ</th>
+                            <th>นามสกุล</th>
+                            <th>username</th>
+                            <th>telephone_number</th>
+                            <th>แก้ไข</th>
+                            <th>ลบ</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-middle">
+                        <?php
+                        $sql = $conn->display_user();
+                        $i = 1;
+                        while ($data = mysqli_fetch_array($sql)) {
+                        ?>
+                            <tr>
+                                <td class="align-middle"><?php echo $i ?> </td>
+                                <td class="align-middle"><?php echo $data['first_name'] ?></td>
+                                <td class="align-middle"><?php echo $data['last_name'] ?></td>
+                                <td class="align-middle"><?php echo $data['username'] ?></td>
+                                <td class="align-middle"><?php echo $data['telephone'] ?></td>
+                                <td class="align-middle"><a href="userEdit.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary">Edit</a></td>
+                                <td class="align-middle"><a href="del.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary" onclick="return confirm ('คุณต้องการลบข้อมูลใช่หรือไม่')"><i class="fa fa-times"></i></a></td>
+                            </tr>
+                        <?php $i = $i + 1;
+                        } ?>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <!-- footer -->
-        <?php
-        include_once("../pages/footer.php");
-        ?>
+    </div>
 </body>
+
+</html>
