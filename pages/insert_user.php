@@ -3,7 +3,6 @@ include_once("connectDB.php");
 $conndb = new DB_conn; 
 $con = $conndb->conn;
 
-$id =$_POST['id'];
 $user =$_POST['username'];
 $pass =$_POST['password'];
 $first =$_POST['first_name'];
@@ -29,6 +28,4 @@ if($sql){
    
 
 mysqli_close($con);
-
-
 

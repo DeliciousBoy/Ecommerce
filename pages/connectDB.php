@@ -19,7 +19,7 @@ class DB_conn
 
     function insert_user($user, $pass, $first, $last, $tele)
     {
-        $sql = "insert into user(username, password, first_name, last_name, telephone)
+        $sql = "insert into user(username	,password	,first_name	,last_name	,telephone)
             values('$user', '$pass', '$first', '$last', '$tele')";
         return ($sql);
     }
@@ -33,9 +33,9 @@ class DB_conn
         $str = mysqli_query($this->conn, "SELECT * from user where id = $id");
         return $str;
     }
-    public function edit_user($fname, $lastname, $telephone, $id)
+    public function edit_user($fname, $lastname,$uname, $telephone, $id)
     {
-        $str = mysqli_query($this->conn, "UPDATE user SET first_name = '$fname', last_name ='$lastname',telephone = '$telephone' WHERE id = $id ");
+        $str = mysqli_query($this->conn, "UPDATE user SET first_name = '$fname', last_name ='$lastname',username = '$uname',telephone = '$telephone' WHERE id = $id ");
         return $str;
     }
     public function del_user($id)
@@ -55,11 +55,6 @@ class DB_conn
         $str = mysqli_query($this->conn,$strSQL);
         return $str;
     }
-
-
-
-
-    
 
 }
 
