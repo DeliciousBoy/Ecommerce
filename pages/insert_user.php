@@ -11,9 +11,9 @@ $last =$_POST['last_name'];
 $tele =$_POST['telephone'];
 
 
-echo $id, $user, $pass, $first, $last, $tele;
+echo $user, $pass, $first, $last, $tele;
 
-$sql = $conndb->insert_user($id, $user, $pass, $first, $last, $tele); 
+$sql = $conndb->insert_user($user, $pass, $first, $last, $tele); 
 
 if(mysqli_query($con,$sql)){
     printf("%d Row insert. \n",mysqli_affected_rows($con));
