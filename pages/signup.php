@@ -57,8 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<div class="col-lg-7 mb-5">
 				<div class="contact-form">
 					<div id="success"></div >
-					<form name="user" id="user" action="insert_user.php" method="post" text-align: center;>
-						<div class="control-group">
+					<form name="user" id="user" align="center" action="insert_user.php" method="post">
+						<div class="control-group" >
 							<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first name" required oninvalid="setCustomValidity('Please enter your first name')"  oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
