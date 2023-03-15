@@ -59,7 +59,7 @@ $conn = new DB_conn;
                             <?php
                             $sql = $conn->select_category();
                             while ($data = mysqli_fetch_array($sql)) { ?>
-                                <option value="<?php echo $data['c_id']; ?>"> <?php echo $data['c_name']; ?> </option>
+                                <option> <?php echo $data['c_name']; ?> </option>
                             <?php
                             }
                             ?>
