@@ -38,7 +38,7 @@ tr:nth-child(odd) {
         <div class="table">
             <!-- <div class="col-lg-8 table-responsive mb-5"> -->
                 <!-- <table class="table table-bordered text-center mb-0" style="width:100%"> -->
-                <table cellpadding = "0" cellspacing = "0" border="0" > 
+                <table cellpadding = "100" cellspacing = "100" border="10" > 
                     <thead class="bg-secondary text-dark">
                         <tr>
                             <th colspan="7">
@@ -68,7 +68,7 @@ tr:nth-child(odd) {
                                 <td class="align-middle"><?php echo $data['username'] ?></td>
                                 <td class="align-middle"><?php echo $data['telephone'] ?></td>
                                 <td class="align-middle"><a href="userEdit.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary">Edit</a></td>
-                                <td class="align-middle"><a href="del.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary" onclick="return confirm ('คุณต้องการลบข้อมูลใช่หรือไม่')"><i class="fa fa-times"></i></a></td>
+                                <td class="align-middle"><a href="deluser.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary" onclick="return confirm ('คุณต้องการลบข้อมูลใช่หรือไม่')"><i class="fa fa-times"></i></a></td>
                             </tr>
                         <?php $i = $i + 1;
                         } ?>
