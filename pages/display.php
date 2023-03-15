@@ -1,3 +1,4 @@
+<?php
 include_once('connectDB.php');
 $conn = new DB_conn;
 ?>
@@ -7,6 +8,10 @@ $conn = new DB_conn;
 table {
   border-collapse: collapse;
   width: 100%;
+  
+}
+body{
+    min-heheight: 100vh;
 }
 
 th, td{
@@ -22,16 +27,18 @@ tr:nth-child(odd) {
   background-color: #DAFFE9;
 
 }
+
 </style>
 
 <body>
     <?php
     include_once('../pages/topbar.php');
     ?>
-    <div class="container pt-5">
-        <div class="row">
-            <div class="col-lg-8 table-responsive mb-5">
-                <table class="table table-bordered text-center mb-0">
+    <div class="table-header">
+        <div class="table">
+            <!-- <div class="col-lg-8 table-responsive mb-5"> -->
+                <!-- <table class="table table-bordered text-center mb-0" style="width:100%"> -->
+                <table cellpadding = "0" cellspacing = "0" border="0" > 
                     <thead class="bg-secondary text-dark">
                         <tr>
                             <th colspan="7">
