@@ -1,7 +1,6 @@
 <?php
 ini_set('file_uploads','1');
 include_once("connectDB.php");
-include_once("../pages/topbar.php");
 $conn = new DB_conn;
 ?>
 
@@ -35,7 +34,7 @@ $conn = new DB_conn;
 <body>
     <div class="container-fluid pt-5">
         <h2 class="text-center mb-4"><span class="px-2">Add products</span></h2>
-        <form method="POST" action="insert_product.php " enctype="multipart/form-data" >
+        <form method="POST" action="insert_product.php" enctype="multipart/form-data" >
         <div class="row px-xl-5">
             <div class="col-lg-7 mb-5">
             <div class="mb-3">
@@ -62,13 +61,13 @@ $conn = new DB_conn;
             <?php
                     $sql = $conn->select_category();
                     while ($data = mysqli_fetch_array($sql)) { ?>
-                        <option value="<?php echo $data[''];?>"> <?php echo $data['']; ?> </option> 
+                        <option value="<?php echo $data['c_id'];?>"> <?php echo $data['c_name']; ?> </option> 
                         <?php 
                         } 
                         ?>
                 </select>
             </div>
-            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send Message</button>
+            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">SAVE</button>
         </form>
     </div>
 </body>
