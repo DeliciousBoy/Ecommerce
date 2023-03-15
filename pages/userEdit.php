@@ -10,8 +10,8 @@
     while ($data = mysqli_fetch_array($sql)) {
         $fname = $data['first_name'];
         $lname = $data['last_name'];
-        $telephone = $data['telephone'];
         $uname = $data['username'];
+        $telephone = $data['telephone'];
     }
     ?>
     <div class="container">
@@ -37,7 +37,7 @@
         </form>
     </div>
     <?php
-
+ 
     $id = $_GET['id'];
     if (isset($_POST['edit'])) {
         $fname = $_POST['fname'];
@@ -46,12 +46,12 @@
         $telephone = $_POST['telephone'];
         $sql = $conn->edit_user($fname, $lname,$uname, $telephone, $id);
         echo $sql;
-        if ($sql) {
-            echo "<script>alert('บันทึกข้อมูลสําเร็จ')</script>";
-            echo "<script>window.location.href='display.php' </script>";
-        } else {
-            echo "<script>alert('เกิดข้อผิดพลาด')</script>";
-        }
+        // if ($sql) {
+        //     echo "<script>alert('บันทึกข้อมูลสําเร็จ')</script>";
+        //     echo "<script>window.location.href='display.php' </script>";
+        // } else {
+        //     echo "<script>alert('เกิดข้อผิดพลาด')</script>";
+        // }
     }
     ?>
 </body>

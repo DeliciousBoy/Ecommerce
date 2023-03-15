@@ -7,28 +7,14 @@ include("functions.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	//something was posted
-	$user_name = $_POST['user_name'];
+	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$first_name = $_POST['first_name'];
 	$last_name = $_POST['last_name'];
 	$telephone = $_POST['telephone'];
-
-	if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
-
-		//save to database
-		$user_id = random_num(20);
-		$query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
-
-		mysqli_query($con, $query);
-
-		header("Location: login.php");
-		die;
-	} else {
-		echo "Please enter some valid information!";
-	}
 }
 ?>
-
+ 
 
 <!DOCTYPE html>
 <html>
@@ -71,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			<div class="col-lg-7 mb-5">
 				<div class="contact-form">
 					<div id="success"></div >
-					<form name="user" id="user" novalidate="novalidate" action="insert_user.php" method="post" text-align: center;>
+					<form name="user" id="user" novalidate="novalidate" action="insert_user.php"   method="post" text-align: center;>
 						<div class="control-group">
 							<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first name" required oninvalid="setCustomValidity('Please enter your first name')"  oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>

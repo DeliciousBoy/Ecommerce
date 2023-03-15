@@ -9,7 +9,7 @@ session_start();
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		//something was posted
-		$user_name = $_POST['user_name'];
+		$user_name = $_POST['username'];
 		$password = $_POST['password'];
 
 		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
@@ -88,7 +88,7 @@ session_start();
 		<form method="post">
 			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
 
-			<input id="text" type="text" name="user_name"><br><br>
+			<input id="text" type="text" name="username"><br><br>
 			<input id="text" type="password" name="password"><br><br>
 
 			<input id="button" type="submit" value="Login"><br><br>
