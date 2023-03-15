@@ -39,23 +39,23 @@ $conn = new DB_conn;
                 <div class="col-lg-7 mb-5">
                     <div class="mb-3">
                         <label class="help-block text-danger">Name of product:</label>
-                        <input type="text" class="form-control" id="id" name="id">
+                        <input type="text" class="form-control" id="id" name="id" require>
                     </div>
                     <div class="mb-3">
                         <label class="help-block text-danger">Product details:</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name" require>
                     </div>
                     <div class="mb-3">
                         <label class="help-block text-danger">Prices: </label>
-                        <input type="text" class="form-control" id="price" name="price">
+                        <input type="text" class="form-control" id="price" name="price" require>
                     </div>
                     <div class="mb-3">
                         <label class="help-block text-danger">Product image:</label>
-                        <input type="file" class="form-control" id="picture" name="picture">
+                        <input type="file" class="form-control" id="picture" name="picture" require>
                     </div>
                     <div class="mb-3">
                         <select class="form-control" name="category" id="category">
-                            <option value=""><-- Choose product types --></option>
+                            <option value="">-- Choose product types--</option>
                             <?php
                             $sql = $conn->select_category();
                             while ($data = mysqli_fetch_array($sql)) { ?>
