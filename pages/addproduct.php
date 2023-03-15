@@ -1,7 +1,7 @@
 <?php
 ini_set('file_uploads', '1');
 include_once("connectDB.php");
-$conn = new DB_conn;
+$conn = new DB_conn();
 ?>
 
 <!DOCTYPE html>
@@ -43,17 +43,17 @@ $conn = new DB_conn;
             <div class="col-lg-7 mb-5">
                 <div class="contact-form">
                     <div id="success"></div>
-                    <form name="product" id="product" novalidate="novalidate" action="insert_product.php" enctype="multipart/form-data" method="post" text-align: center;>
+                    <form name="product" id="product" novalidate="novalidate" action="insertPro.php" enctype="multipart/form-data" method="post" text-align: center;>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="pName" name="pName" placeholder="Product Name" required oninvalid="setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')" />
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Product Name" required oninvalid="setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="pDetails" name="pDetails" placeholder="Product details" required oninvalid="setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')" />
+                            <input type="text" class="form-control" id="detail" name="pDetails" placeholder="Product details" required oninvalid="setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="pPrice" name="pPrice" placeholder="Price of product" required oninvalid="setCustomValidity('Please enter your username name')" oninput="setCustomValidity('')" />
+                            <input type="text" class="form-control" id="price" name="price" placeholder="Price of product" required oninvalid="setCustomValidity('Please enter your username name')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
