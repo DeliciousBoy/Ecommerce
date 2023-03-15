@@ -42,16 +42,16 @@
     if (isset($_POST['edit'])) {
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
-        $uname = $_post['uname'];
+        $uname = $_POST['uname'];
         $telephone = $_POST['telephone'];
         $sql = $conn->edit_user($fname, $lname,$uname, $telephone, $id);
         echo $sql;
-        // if ($sql) {
-        //     echo "<script>alert('บันทึกข้อมูลสําเร็จ')</script>";
-        //     echo "<script>window.location.href='display.php' </script>";
-        // } else {
-        //     echo "<script>alert('เกิดข้อผิดพลาด')</script>";
-        // }
+        if ($sql) {
+            echo "<script>alert('บันทึกข้อมูลสําเร็จ')</script>";
+            echo "<script>window.location.href='display.php' </script>";
+        } else {
+            echo "<script>alert('เกิดข้อผิดพลาด')</script>";
+        }
     }
     ?>
 </body>
