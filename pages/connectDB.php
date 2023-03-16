@@ -48,15 +48,13 @@ class DB_conn
         $str = mysqli_query($this->conn, $strSQL);
         return $str;
     }
-    public function insert_product($p_id, $p_name, $p_price, $p_category, $path_img)
-{
-    $strSQL = "INSERT INTO product (id_p, name, price, picture, c_id)
-               VALUES ('$p_id', '$p_name', $p_price, '$path_img', $p_category)";
-    $result = mysqli_query($this->conn, $strSQL);
-    if (!$result) {
-        die("Error inserting product: " . mysqli_error($this->conn));
-    }
-    return $result;
+    public function insert_product( $p_name,$p_details ,$p_price, $path_img,$p_category)
+    {
+    $strSQL = "INSERT INTO product( pName, pDetails,pPrice , pImage,c_id)
+               VALUES ('$p_name', '$p_details',$p_price, '$path_img',$p_category)";
+    // $sql = mysqli_query($this->conn, $strSQL);
+    $str = mysqli_query($this->conn, $strSQL);
+    return $str;
     }
 }
 ?>

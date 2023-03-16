@@ -46,7 +46,7 @@ $conn = new DB_conn;
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="detail" name="pDetails" placeholder="Product details" required oninvalid="setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')" />
+                            <input type="text" class="form-control" id="details" name="pDetails" placeholder="Product details" required oninvalid="setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
@@ -63,7 +63,7 @@ $conn = new DB_conn;
                                 <?php
                                 $sql = $conn->select_category();
                                 while ($data = mysqli_fetch_array($sql)) { ?>
-                                    <option> <?php echo $data['c_name']; ?> </option>
+                                    <option value="<?php $data['c_id']; ?>"> <?php echo $data['c_name']; ?> </option>
                                 <?php
                                 }
                                 ?>
@@ -75,7 +75,7 @@ $conn = new DB_conn;
                     </form>
                 </div>
             </div>
-            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">SAVE</button>
+           
         </form>
     </div>
 </body>
