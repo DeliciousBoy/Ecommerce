@@ -1,7 +1,7 @@
 <?php
-ini_set('file_uploads', '1');
+ini_set('file_uploads','1');
 include_once("connectDB.php");
-$conn = new DB_conn();
+$conn = new DB_conn;
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ $conn = new DB_conn();
 
 <head>
     <meta charset="utf-8">
-    <title>minishop - add</title>
+    <title>EShopper</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -32,9 +32,6 @@ $conn = new DB_conn();
 </head>
 
 <body>
-    <?php
-    include_once("topbar.php");
-    ?>
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Add Products</span></h2>
@@ -78,10 +75,9 @@ $conn = new DB_conn();
                     </form>
                 </div>
             </div>
-        </div>
-        <?php
-        include_once("../pages/footer.php");
-        ?>
+            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">SAVE</button>
+        </form>
+    </div>
 </body>
 
 </html>
