@@ -12,8 +12,9 @@ class DB_conn
         $this->conn = $conn;
 
         if ($conn === false) {
-            die("ERROR : Could not connect. " . mysqli_connect_error());
+            die("ERROR : Could not connect. " . mysqli_connect_error());;
         } 
+        
     }
 
     function insert_user($user, $pass, $first, $last, $tele)
@@ -48,13 +49,16 @@ class DB_conn
         $str = mysqli_query($this->conn, $strSQL);
         return $str;
     }
-    public function insert_product( $p_name,$p_details ,$p_price, $path_img,$p_category)
-    {
-    $strSQL = "INSERT INTO product( pName, pDetails,pPrice , pImage,c_id)
-               VALUES ('$p_name', '$p_details',$p_price, '$path_img',$p_category)";
-    // $sql = mysqli_query($this->conn, $strSQL);
-    $str = mysqli_query($this->conn, $strSQL);
-    return $str;
+    public function insert_product($p_name,$p_details,$p_price,$p_category,$path_img){
+        $strSQL = "INSERT INTO product (pName, pDetails, pPrice,id, pImage)
+        values ('$p_name', '$p_details',$p_price,$p_category,'$path_img')";
+        $str = mysqli_query($this->conn,$strSQL);
+        return $str;
     }
+    
+
+    
+
 }
+
 ?>

@@ -46,8 +46,9 @@ $conn = new DB_conn;
                     <option value="">-- Choose product types--</option>
                     <?php
                     $sql = $conn->select_category();
-                    while ($data = mysqli_fetch_array($sql)) { ?>
-                        <option value="<?php $data['c_id']; ?>"> <?php echo $data['c_name']; ?> </option>
+                    while ($data = mysqli_fetch_array($sql)) { 
+                    ?>
+                        <option value="<?php echo $data['id']; ?>"> <?php echo $data['c_name']; ?> </option>
                     <?php
                     }
                     ?>

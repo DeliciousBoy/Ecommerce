@@ -1,4 +1,4 @@
-<!---6430250318 rawee sinbumrung--->
+
 <?php
 ini_set('file_uploads','1');
 include_once("connectDB.php");
@@ -22,7 +22,7 @@ if($fileextension == 'jpg' or $fileextension == 'png'){
         $path = '../p_img/';
          if(!empty($name)){ 
             if(move_uploaded_file($tmp_name,$path.$name)){
-            $path_img = $path.$name; 
+            $path_img = $path . $name; 
             $sql = $conn->insert_product($p_name,$p_details,$p_price,$path_img,$p_category);
             if($sql){
                 echo "<script>alert('Your product has been saved!')</script>"; 
