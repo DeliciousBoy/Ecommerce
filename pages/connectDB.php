@@ -1,21 +1,11 @@
 <?php
+session_start();
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'minishop');
 
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
 
-// try {
-//     $conn = new PDO("mysql:host=$servername;dbname=minishop", $username, $password);
-//     // set the PDO error mode to exception
-//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//     echo "Connected successfully";
-// } catch(PDOException $e) {
-//     echo "Connection failed: " . $e->getMessage();
-// }
  
 class DB_conn
 {
@@ -32,36 +22,23 @@ class DB_conn
 
     function insert_user($user, $pass, $first, $last, $tele)
     {
-        // ------------- ส่วนเดิม --------------------
-        // $sql = "insert into user(username	,password	,first_name	,last_name	,telephone)
-        //     values('$user', '$pass', '$first', '$last', '$tele')";
-        // return ($sql);
-        // ------------------------------------------
-        // $user = $_POST['username'];
-        // if (isset($_POST['signup'])){
-        //     $user= $_POST['username'];
-        //     $pass = $_POST['password'];
-        //     $fname = $_POST['first_name'];
-        //     $lname = $_POST['last_name'];
-        //     $phone = $_POST['telephone'];
-        //     $role = 'normal_user';
-        // }
-
-        // $check_username = "SELECT * FROM user WHERE username = $user";
-        $username = $_POST['username'];
+      
         $stmt = mysqli_prepare($this -> conn, "SELECT * FROM user WHERE username = ?");
         mysqli_stmt_bind_param($stmt, "s", $user);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         if(mysqli_num_rows($result) > 0){
-            // echo "Data is duplicated!";
-            echo "<script>alert('user ซ้ำกัน')</script>";
-            echo "<script>window.location.href='signup.php' </script>";
-        }else{
-            $sql = "insert into user(username	,password	,first_name	,last_name	,telephone)
-            values('$user', '$pass', '$first', '$last', '$tele')";
-            
+            $_SESSION['warning'] = "มีชื่อ user นี้ในระบบแล้ว";
+            header('Location: signup.php');
+        }else if(!filter_var($tele,FILTER_VALIDATE_INT)){
+            $_SESSION['warning'] = 'เบอร์โทรต้องเป็นตัวเลขเท่านั้น';
+            header('Location: signup.php');
         }
+        else{
+            $sql = "insert into user(username	,password	,first_name	,last_name	,telephone)
+                values('$user', '$pass', '$first', '$last', '$tele')";
+        }    
+        
         return ($sql);
         
     }

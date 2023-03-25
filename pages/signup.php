@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 include("connectDB.php");
 include("functions.php");
@@ -66,6 +66,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				<div class="contact-form">
 					<div id="success"></div>
 					<form name="user" id="user" align="center" action="insert_user.php" method="post">
+						
+						<?php if (isset($_SESSION['warning'])) { ?>
+							<div class="alert alert-warning" role = "alert">
+								<?php 
+									echo $_SESSION['warning'];
+									unset($_SESSION['warning']);
+								?>
+							</div>
+
+						<?php } ?>
+						
 						<div class="control-group">
 							<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first name" 
 							required oninvalid="setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')" />
