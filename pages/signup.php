@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	<!-- header -->
 	<div class="container-fluid pt-5">
 		<div class="text-center mb-4">
-			<h2 class="section-title px-5"><span class="px-2">Enter User</span></h2>
+			<h2 class="section-title px-5"><span class="px-2">Sign up</span></h2>
 		</div>
 		<div class="row px-xl-5">
 			<div class="col-lg-7 mb-5">
@@ -67,32 +67,47 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<div id="success"></div>
 					<form name="user" id="user" align="center" action="insert_user.php" method="post">
 						<div class="control-group">
-							<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first name" required oninvalid="setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')" />
+							<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first name" 
+							required oninvalid="setCustomValidity('Please enter your first name')" oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="control-group">
-							<input type="text" class="form-control" id="last_name" name="last_name" placeholder="last name" required oninvalid="setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')" />
+							<input type="text" class="form-control" id="last_name" name="last_name" placeholder="last name" 
+							required oninvalid="setCustomValidity('Please enter your last name')" oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="control-group">
-							<input type="text" class="form-control" id="username" name="username" placeholder="username" required oninvalid="setCustomValidity('Please enter your username name')" oninput="setCustomValidity('')" />
+							<input type="text" class="form-control" id="username" name="username" placeholder="username" 
+							required oninvalid="setCustomValidity('Please enter your username name')" oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="control-group">
-							<input type="password" class="form-control" id="password" name="password" placeholder="password" required oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
+							<input type="password" class="form-control" id="password" name="password" placeholder="password" 
+							required oninvalid="setCustomValidity('Please enter your password')" oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="control-group">
-							<input type="int" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" required oninvalid="setCustomValidity('Please enter your telephone number')" oninput="setCustomValidity('')" />
+							<input type="int" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" 
+							required oninvalid="intValidity('Please enter your telephone number')" oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
 						<div>
-							<button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send Message</button>
+							<button class="btn btn-primary py-2 px-4" name="signup" type="submit" id="sendMessageButton">Submit</button>
+							
+						</div>
+						<div>
+							<hr>
+								<p> เป็นสมาชิกแล้วใช่มั๊ย <a href="login.php"> login </a></p>
+							</hr>
 						</div>
 					</form>
+					
 				</div>
 			</div>
+			
 		</div>
+		
+		
 		<!-- footer -->
 		<?php
 		include_once("../pages/footer.php");
