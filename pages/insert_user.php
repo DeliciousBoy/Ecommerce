@@ -19,7 +19,7 @@ if(mysqli_query($con,$sql)){
 }
 
 if($sql){
-    echo "<script>alert('add user สำเร็จ')</script>";
+    // echo "<script>alert('add user สำเร็จ')</script>";
     echo "<script>window.location.href='login.php' </script>";
     } else {
         echo "<script>alert('เกิดข้อผิดพลาด')</script>";

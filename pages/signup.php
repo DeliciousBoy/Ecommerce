@@ -76,6 +76,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							</div>
 
 						<?php } ?>
+						<?php if (isset($_SESSION['sucess'])) { ?>
+							<div class="alert alert-sucess" role = "alert">
+								<?php 
+									echo $_SESSION['sucess'];
+									unset($_SESSION['sucess']);
+								?>
+							</div>
+
+						<?php } ?>
 						
 						<div class="control-group">
 							<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first name" 
