@@ -1,9 +1,9 @@
 <?php
+session_start();
 include_once("connectDB.php");
 $conn = new DB_conn;
 $sql = $conn->select_product();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,37 +97,38 @@ $sql = $conn->select_product();
 		</div>
 	</div>
 
-						<?php
-						while ($data = mysqli_fetch_array($sql)) {
-							echo '<div class="container">';
-							echo '<div class="row">';
-							echo '<div class="col-md-8 col-lg-10 order-md-last">';
-							echo '<div class="row">';
-							echo '<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">';
-							echo '<div class="product d-flex flex-column">';
-							echo '<div class="overlay"></div>';
-							echo '<a href="#" class="img-prod"><img class="img-fluid" src="' . $data['pImage'] . '" alt="Product Image"></a>';
-							echo '<div class="text py-3 pb-4 px-3">';
-							echo '<h3 class="product-name">' . $data['pName'] . '</h3>';
-							echo '<p class="product-details">' . $data['pDetails'] . '</p>';
-							echo '<p class="product-price">Price: ' . $data['pPrice'] . '</p>';
-							echo '<a href="#" class="btn btn-primary">Add to cart</a>';
-							echo '</div>';
-							echo '</div>';
-							echo '</div>';
-							echo '</div>';
-							echo '</div>';
-							echo '</div>';
-						}
-						?>
+	<?php
+	while ($data = mysqli_fetch_array($sql)) {
+		echo '<form action="checkout.php" enctype="multipart/form-data" method="post">';
+		echo '<div class="container">';
+		echo '<div class="row">';
+		echo '<div class="col-md-8 col-lg-10 order-md-last">';
+		echo '<div class="row">';
+		echo '<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">';
+		echo '<div class="product d-flex flex-column">';
+		echo '<div class="overlay"></div>';
+		echo '<a href="#" class="img-prod"><img class="img-fluid" src="' . $data['pImage'] . '" alt="Product Image"></a>';
+		echo '<div class="text py-3 pb-4 px-3">';
+		echo '<h3 class="product-name">' . $data['pName'] . '</h3>';
+		echo '<p class="product-details">' . $data['pDetails'] . '</p>';
+		echo '<p class="product-price">Price: ' . $data['pPrice'] . '</p>';
+		echo '<a button class="btn btn-primary py-2 px-4" name="p_add" type="submit" id="sendMessageButton" onclick="alert(\'You added ' . $data['pName'] . ' to your cart \')">Add to cart</a>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+	}
+	?>
 
 
 
 
-					</div>
-				</div>
-			</div>
-		</div>
+	</div>
+	</div>
+	</div>
+	</div>
 	</section>
 
 	<section class="ftco-gallery">
