@@ -1,3 +1,9 @@
+<?php
+include_once("connectDB.php");
+$conn = new DB_conn;
+$sql = $conn->select_product();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,21 +86,6 @@
 	</nav>
 	<!-- END nav -->
 
-	<?php
-	include_once("connectDB.php");
-	$conn = new DB_conn;
-	$sql = $conn->select_product();
-
-	while ($data = mysqli_fetch_array($sql)) {
-		echo '<div>';
-		echo '<h3>' . $data['pName'] . '</h3>';
-		echo '<p>' . $data['pDetails'] . '</p>';
-		echo '<p>Price: ' . $data['pPrice'] . '</p>';
-		echo '<img src="' . $data['pImage'] . '" alt="' . $data['pName'] . '">';
-		echo '</div>';
-	}
-	?>
-
 	<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -105,6 +96,96 @@
 			</div>
 		</div>
 	</div>
+
+						<?php
+						while ($data = mysqli_fetch_array($sql)) {
+							echo '<div class="container">';
+							echo '<div class="row">';
+							echo '<div class="col-md-8 col-lg-10 order-md-last">';
+							echo '<div class="row">';
+							echo '<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">';
+							echo '<div class="product d-flex flex-column">';
+							echo '<div class="overlay"></div>';
+							echo '<a href="#" class="img-prod"><img class="img-fluid" src="' . $data['pImage'] . '" alt="Product Image"></a>';
+							echo '<div class="text py-3 pb-4 px-3">';
+							echo '<h3 class="product-name">' . $data['pName'] . '</h3>';
+							echo '<p class="product-details">' . $data['pDetails'] . '</p>';
+							echo '<p class="product-price">Price: ' . $data['pPrice'] . '</p>';
+							echo '<a href="#" class="btn btn-primary">Add to cart</a>';
+							echo '</div>';
+							echo '</div>';
+							echo '</div>';
+							echo '</div>';
+							echo '</div>';
+							echo '</div>';
+						}
+						?>
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-gallery">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8 heading-section text-center mb-4 ftco-animate">
+					<h2 class="mb-4">Follow Us On Instagram</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid px-0">
+			<div class="row no-gutters">
+				<div class="col-md-4 col-lg-2 ftco-animate">
+					<a href="images/gallery-1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+							<span class="icon-instagram"></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-lg-2 ftco-animate">
+					<a href="images/gallery-2.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-2.jpg);">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+							<span class="icon-instagram"></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-lg-2 ftco-animate">
+					<a href="images/gallery-3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+							<span class="icon-instagram"></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-lg-2 ftco-animate">
+					<a href="images/gallery-4.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+							<span class="icon-instagram"></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-lg-2 ftco-animate">
+					<a href="images/gallery-5.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-5.jpg);">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+							<span class="icon-instagram"></span>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 col-lg-2 ftco-animate">
+					<a href="images/gallery-6.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/gallery-6.jpg);">
+						<div class="icon mb-4 d-flex align-items-center justify-content-center">
+							<span class="icon-instagram"></span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<footer class="ftco-footer ftco-section">
 		<div class="container">
@@ -125,7 +206,6 @@
 							<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
 							<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
 						</ul>
-						
 					</div>
 				</div>
 				<div class="col-md">
@@ -171,7 +251,6 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
-
 
 					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &copy;<script>
