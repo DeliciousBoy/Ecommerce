@@ -80,11 +80,10 @@ class DB_conn
         $str = mysqli_query($this->conn,$strSQL);
         return $str;
     }
-    
-
-    
-    
-
+    public function select_product(){
+        $strSQL = "SELECT * FROM product";
+        $str = mysqli_query($this->conn, $strSQL);
+        return $str;
+    }
 }
-
 ?>
