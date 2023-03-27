@@ -123,7 +123,7 @@ class DB_conn
         return $str;
     }
     public function select_product(){
-        $strSQL = "SELECT * FROM product";
+        $strSQL = "SELECT * FROM product ORDER BY pPrice ASC";
         $str = mysqli_query($this->conn, $strSQL);
         return $str;
     }
