@@ -15,7 +15,7 @@
             $_SESSION['warning'] = 'กรุณากรอกรหัสผ่าน';
             header('Location: login.php');
         }else{ 
-
+             
             $stmt = mysqli_prepare($con,"SELECT * FROM user WHERE username = ?");
             mysqli_stmt_bind_param($stmt, "s", $user);
             mysqli_stmt_execute($stmt);

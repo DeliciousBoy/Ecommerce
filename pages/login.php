@@ -1,10 +1,10 @@
 <?php
 // session_start();
 
-include("connectDB.php");
-require_once("connectDB.php");
-include("functions.php");
-
+	include("connectDB.php");
+	require_once("connectDB.php");
+	include("functions.php");
+	
 ?>
 
 
