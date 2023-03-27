@@ -1,0 +1,45 @@
+<?php
+    
+    include("connectDB.php");
+    $conndb = new DB_conn; 
+    $con = $conndb->conn; 
+
+    if(isset($_POST['login'])){
+        $user = $_POST['username'];
+        $pass = $_POST['password'];
+
+        if(empty($user)){
+            $_SESSION['warning'] = 'กรุณากรอกอีเมล';
+            header('Location: login.php');
+        }else if(empty($pass)){
+            $_SESSION['warning'] = 'กรุณากรอกรหัสผ่าน';
+            header('Location: login.php');
+        }else{ 
+
+            $stmt = mysqli_prepare($con,"SELECT * FROM user WHERE username = ?");
+            mysqli_stmt_bind_param($stmt, "s", $user);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            
+            if(mysqli_num_rows($result)>0){
+                $user_data = mysqli_fetch_assoc($result);
+                if($user_data['password'] == $pass){
+                    
+                    $_SESSION['user_id'] = $user_data['user_id'];
+                    header("location: index.php");
+                    
+
+                }else{
+                    $_SESSION['warning'] = 'รหัสผ่านผิดหรือชื่อ user ไม่ตรงกัน';
+                    header("location: login.php");
+                }
+                
+            }else{
+                $_SESSION['warning'] = 'ไม่มี user นี้ในระบบ';
+                header("location: login.php");
+            }
+            
+        }
+    }
+    
+?>

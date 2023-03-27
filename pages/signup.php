@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 							<p class="help-block text-danger"></p>
 						</div>
 						<div class="control-group">
-							<input type="int" class="form-control" id="telephone" name="telephone" placeholder="Your telephone" 
+							<input type="int" class="form-control" id="telephone" name="telephone" placeholder="your telephone" 
 							required oninvalid="intValidity('Please enter your telephone number')" oninput="setCustomValidity('')" />
 							<p class="help-block text-danger"></p>
 						</div>
