@@ -25,13 +25,12 @@
                 $user_data = mysqli_fetch_assoc($result);
                 if($user_data['password'] == $pass){
                     if($user_data['role']=='admin'){
-                        $_SESSION['admin_login'] = $user_data['user_id'];
+                        $_SESSION['admin_login'] = $user_data['username'];
                         header("location: admin.php");
                     }else{
-                        $_SESSION['user_login'] = $user_data['user_id'];
+                        $_SESSION['user_login'] = $user_data['username'];
                         header("location: index.php");
                     }
-                
                 }else{
                     $_SESSION['warning'] = 'รหัสผ่านผิด';
                     header("location: login.php");
