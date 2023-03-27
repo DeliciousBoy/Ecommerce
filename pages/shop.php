@@ -6,7 +6,7 @@ $conn = new DB_conn;
 $sql = $conn->select_product();
 
 if (isset($_POST['p_add'])) {
-	echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";
+	//echo "<script>alert('" .$_POST['pName']. "')</script>";
 	if (isset($_SESSION['cart'])) {
 		#check duplicate products
 		$item_array_id = array_column($_SESSION['cart'], 'p_id');
