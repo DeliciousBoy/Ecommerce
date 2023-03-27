@@ -15,32 +15,34 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 ?>
 
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<title>Signup</title>
 	<meta charset="utf-8">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<meta content="Free HTML Templates" name="keywords">
-	<meta content="Free HTML Templates" name="description">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Favicon -->
-	<link href="../img/favicon.ico" rel="icon">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-	<!-- Google Web Fonts -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="../css/animate.css">
 
-	<!-- Font Awesome -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/owl.carousel.min.css">
+	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="../css/magnific-popup.css">
 
-	<!-- Libraries Stylesheet -->
-	<link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/aos.css">
 
-	<!-- Customized Bootstrap Stylesheet -->
-	<link href="../css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/ionicons.min.css">
+
+	<link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="../css/jquery.timepicker.css">
+
+
+	<link rel="stylesheet" href="../css/flaticon.css">
+	<link rel="stylesheet" href="../css/icomoon.css">
+	<link rel="stylesheet" href="../css/style.css">
 	<style>
 		form {
 			text-align: center;
@@ -51,12 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	</style>
 </head>
 
+
 <body>
-	<!-- header -->
-	<?php
-	include_once("../pages/topbar.php");
-	?>
-	<!-- header -->
 	<div class="container-fluid pt-5">
 		<div class="text-center mb-4">
 			<h2 class="section-title px-5"><span class="px-2">Sign up</span></h2>
@@ -127,12 +125,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			
 		</div>
 		
-		
-		<!-- footer -->
-		<?php
-		include_once("../pages/footer.php");
-		?>
-
 </body>
 
 </html>
