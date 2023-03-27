@@ -16,6 +16,8 @@
     <div class="container">
     <?php
         if (isset($_SESSION['admin_login'])) {
+
+            //ส่วนในการดึงข้อมูลจาก table 
             $user = $_SESSION['admin_login'];
             $stmt = mysqli_prepare($con,"SELECT * FROM user WHERE username = ?");
             mysqli_stmt_bind_param($stmt, "s", $user);
