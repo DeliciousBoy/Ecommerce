@@ -24,13 +24,16 @@
             if(mysqli_num_rows($result)>0){
                 $user_data = mysqli_fetch_assoc($result);
                 if($user_data['password'] == $pass){
-                    
-                    $_SESSION['user_id'] = $user_data['user_id'];
-                    header("location: index.php");
-                    
-
+                    if($user_data['role']=='admin'){
+                        $_SESSION['admin_login'] = $user_data['user_id'];
+                        header("location: admin.php");
+                    }else{
+                        $_SESSION['user_login'] = $user_data['user_id'];
+                        header("location: index.php");
+                    }
+                
                 }else{
-                    $_SESSION['warning'] = 'รหัสผ่านผิดหรือชื่อ user ไม่ตรงกัน';
+                    $_SESSION['warning'] = 'รหัสผ่านผิด';
                     header("location: login.php");
                 }
                 
