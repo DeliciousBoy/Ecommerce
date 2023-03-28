@@ -47,8 +47,16 @@
 						</div>
 					</li>
 					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-					<li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span></a></li>
-
+					<li class="nav-item cta cta-colored"><a href="checkout.php" class="nav-link"><span class="icon-shopping_cart"></span>
+					<?php
+					if(isset($_SESSION['cart'])){
+						$count = count($_SESSION['cart']);
+						echo '<spand id = "cart_count">'.$count.'</spand>';
+						}else{
+							echo '<spand id="cart_count">0</spand>';
+						}
+					?>
+				</a></li>
 				</ul>
 			</div>
 		</div>
