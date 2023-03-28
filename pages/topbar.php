@@ -41,12 +41,11 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="shop.html">Shop</a>
-							<a class="dropdown-item" href="cart.html">Cart</a>
-							<a class="dropdown-item" href="checkout.html">Checkout</a>
+							<a class="dropdown-item" href="shop.php">Shop</a>
+							<a class="dropdown-item" href="cart.php">Cart</a>
+							<a class="dropdown-item" href="checkout.php">Checkout</a>
 						</div>
 					</li>
-					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 					<li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>
 					<?php
 					if(isset($_SESSION['cart'])){
