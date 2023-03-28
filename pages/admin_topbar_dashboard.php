@@ -2,11 +2,11 @@
     include("connectDB.php");
     $conndb = new DB_conn; 
     $con = $conndb->conn; 
+    
     if(!isset($_SESSION['admin_login'])){
         $_SESSION['warning'] = 'กรุณาเข้าสู่ระบบ';
         header('location: login.php');
     }
-
     if (isset($_SESSION['admin_login'])) {
 
         //ส่วนในการดึงข้อมูลจาก table 
@@ -19,10 +19,10 @@
             $user_data = mysqli_fetch_assoc($result);
             // echo '<h3 class="mt-4">Welcome, '.$user_data['first_name'].' '.$user_data['last_name'].'</h3>';
         } else {
-            echo '<p>Failed to retrieve user data</p>';
+            // echo '<p>Failed to retrieve user data</p>';
         }
     } else {
-        echo '<p>You are not authorized to view this page</p>';
+        // echo '<p>You are not authorized to view this page</p>';
     }
 ?>
 
@@ -220,7 +220,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

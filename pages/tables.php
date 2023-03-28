@@ -1,7 +1,4 @@
-<?php
-    // require_once('connectDB.php');
-    // $conn = new DB_conn;
-?>
+
 <!DOCTYPE html>
 <html lang="en">
     

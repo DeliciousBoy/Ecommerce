@@ -1,7 +1,4 @@
-<!-- <?php
-include_once('connectDB.php');
-$conn = new DB_conn;
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -59,7 +56,7 @@ $conn = new DB_conn;
                         <th>ลบ</th>
                     </tr>
                 </thead>
-                <tbody class="align-middle"> -->
+                <tbody class="align-middle">
                     <?php
                     $sql = $conn->display_user();
                     $i = 1;
@@ -76,11 +73,11 @@ $conn = new DB_conn;
                         </tr>
                     <?php $i = $i + 1;
                     } ?>
-                <!-- </tbody>
+                </tbody>
             </table>
         </div>
     </div>
     </div>
 </body>
 
-</html> -->
+</html>

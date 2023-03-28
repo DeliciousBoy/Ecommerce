@@ -48,7 +48,7 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.php">
+        <a class="nav-link" href="admin_product.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>product</span></a>
     </li>
