@@ -26,7 +26,7 @@
                 if($user_data['password'] == $pass){
                     if($user_data['role']=='admin'){
                         $_SESSION['admin_login'] = $user_data['username'];
-                        header("location: admin.php");
+                        header("location: admin_dashboard.php");
                     }else{
                         $_SESSION['user_login'] = $user_data['username'];
                         header("location: index.php");

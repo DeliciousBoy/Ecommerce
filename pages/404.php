@@ -1,13 +1,9 @@
-<?php
-    // require_once('connectDB.php');
-    // $conn = new DB_conn;
-?>
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
 
-    <?php include_once("admin_header.php"); ?>
+    <?php include_once("admin_tobbar.php"); ?>
 
 </head>
 
@@ -33,47 +29,12 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Customer</h1>
-                    <p class="mb-4">Database of all user</p>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">User Data Table</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ลำดับ</th>
-                                            <th>ชื่อ</th>
-                                            <th>นามสุกล</th>
-                                            <th>username</th>
-                                            <th>telephone</th>
-                                            <!-- <th>role</th> -->
-                                            <th>แก้ไข</th>
-                                            <th>ลบ</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ลำดับ</th>
-                                            <th>ชื่อ</th>
-                                            <th>นามสุกล</th>
-                                            <th>username</th>
-                                            <th>telephone</th>
-                                            <!-- <th>role</th> -->
-                                            <th>แก้ไข</th>
-                                            <th>ลบ</th>
-                                        </tr>
-                                    </tfoot>
-                                    <?php include_once("customer_table.php"); ?>
-                                </table>
-                            </div>
-                        </div>
+                    <!-- 404 Error Text -->
+                    <div class="text-center">
+                        <div class="error mx-auto" data-text="404">404</div>
+                        <p class="lead text-gray-800 mb-5">Page Not Found</p>
+                        <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
+                        <a href="index.html">&larr; Back to Dashboard</a>
                     </div>
 
                 </div>
@@ -132,13 +93,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 

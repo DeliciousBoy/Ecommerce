@@ -15,7 +15,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php include_once("admin_slidebar.php")?>
+        <?php include_once("admin_sidebar.php")?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
