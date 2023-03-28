@@ -47,7 +47,7 @@
 						</div>
 					</li>
 					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-					<li class="nav-item cta cta-colored"><a href="checkout.php" class="nav-link"><span class="icon-shopping_cart"></span>
+					<li class="nav-item cta cta-colored"><a href="cart.php" class="nav-link"><span class="icon-shopping_cart"></span>
 					<?php
 					if(isset($_SESSION['cart'])){
 						$count = count($_SESSION['cart']);
