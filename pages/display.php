@@ -1,4 +1,14 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> parent of 09233f9 (อัพเดต admin dashboard ให้แสดงชื่อ user)
+<?php
+include_once('connectDB.php');
+$conn = new DB_conn;
+?>
+>>>>>>> parent of 09233f9 (อัพเดต admin dashboard ให้แสดงชื่อ user)
 <!DOCTYPE html>
 <html lang="en">
 <style>
