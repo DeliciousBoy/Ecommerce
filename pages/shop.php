@@ -4,6 +4,8 @@ require_once("component.php");
 include_once("connectDB.php");
 $conn = new DB_conn;
 $sql = $conn->select_product();
+$sql2 = $conn->select_category();
+
 
 if (isset($_POST['p_add'])) {
     if (isset($_POST['p_id']) && isset($_POST['pName'])) {
@@ -15,7 +17,7 @@ if (isset($_POST['p_add'])) {
             if (in_array($p_id, $item_array_id)) {
                 echo '<script> alert ("This product is already in your cart")</script>';
                 echo '<script> window.location="shop.php"</script>';
-            }else {
+            } else {
                 $count = count($_SESSION['cart']);
                 $item_array = array('p_id' => $p_id, 'p_name' => $p_name);
                 $_SESSION['cart'][$count] = $item_array;
@@ -50,15 +52,63 @@ include_once('topbar.php')
 
 <!--Products-->
 <section class="ftco-section bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-lg-10 order-md-last">
-                    <div class="row">
-<?php
-while ($data = mysqli_fetch_array($sql)) {
-    echo component($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
-}
-?>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-10 order-md-last">
+                <div class="row">
+                    <?php
+                    if (!isset($_GET['category'])) {
+                        while ($data = mysqli_fetch_array($sql)) {
+                            echo component($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
+                        }
+                    }
+                    if (isset($_GET['category'])) {
+                        $id = $_GET['category'];
+                        $sql3 = $conn->select_product2($id);
+                        while ($data = mysqli_fetch_array($sql3)) {
+                            echo component($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <div class="block-27">
+                            <ul>
+                                <li><a href="#">&lt;</a></li>
+                                <li class="active"><span>1</span></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-2">
+                <div class="sidebar">
+                    <div class="sidebar-box-2">
+                        <h2 class="heading">Categories</h2>
+                        <div class="fancy-collapse-panel">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <?php
+                                            while ($row_data = mysqli_fetch_assoc($sql2)) {
+                                                $category_name = $row_data['c_name'];
+                                                $category_id = $row_data['id'];
+                                                echo "<li><a href='shop.php?category=$category_id'>$category_name</a></li>";
+                                            }
+                                            ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,5 +118,6 @@ while ($data = mysqli_fetch_array($sql)) {
 <?php
 include_once('footer.php');
 ?>
+
 
 </html>
