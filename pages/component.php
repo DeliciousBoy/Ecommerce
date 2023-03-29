@@ -2,7 +2,8 @@
 
 function component($p_id, $p_name, $p_details, $p_price, $path_img)
 {
-    $element = '<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
+    $element = '<form action="#" method="post" enctype="multipart/form-data" >
+    <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
     <div class="product d-flex flex-column">
         <a href="#" class="img-prod"><img class="img-fluid img-thumbnail" src="' . $path_img . '" alt="Colorlib Template">
             <div class="overlay"></div>
@@ -22,15 +23,15 @@ function component($p_id, $p_name, $p_details, $p_price, $path_img)
 
 function cartElement($p_name, $p_details, $p_price, $path_img){
     $element = '<tr class="text-center">
-    <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+    <td class="product-remove"><a href="del_product.php"><span class="ion-ios-close"></span></a></td>
     
     <td class="image-prod"><div class="img" style="background-image:url('.$path_img.');"></div></td>
     
-    <td class="product-name">
+    <td class="pName">
         <h3>'.$p_name.'</h3>
         <p>'.$p_details.'</p>
     </td>
-    <td class="price">$'.$p_price.'</td>
+    <td class="pPrice">$'.$p_price.'</td>
     
     <td class="quantity">
         <div class="input-group mb-3">
