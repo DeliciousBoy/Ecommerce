@@ -11,12 +11,12 @@ if (isset($_POST['p_add'])) {
     if (isset($_POST['p_id']) && isset($_POST['pName'])) {
         $p_id = $_POST['p_id'];
         $p_name = $_POST['pName'];
-        echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";
+        //echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";
         if (isset($_SESSION['cart'])) {
             $item_array_id = array_column($_SESSION['cart'], 'p_id');
             if (in_array($p_id, $item_array_id)) {
-                echo '<script> alert ("This product is already in your cart")</script>';
-                echo '<script> window.location="shop.php"</script>';
+                /*echo '<script> alert ("This product is already in your cart")</script>';
+                echo '<script> window.location="shop.php"</script>';*/
             } else {
                 $count = count($_SESSION['cart']);
                 $item_array = array('p_id' => $p_id, 'p_name' => $p_name);

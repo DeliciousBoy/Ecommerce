@@ -18,11 +18,12 @@ function component($p_id, $p_name, $p_details, $p_price, $path_img)
                 <button class="buy-now text-center py-2" type="submit" name="p_add" id="p_add"><a href="checkout.php">Buy now</a><span><i class="ion-ios-cart ml-1"></i></span></button>
         </div>
     </div>
-</div>';
+</div>
+</form>';
     return $element;
 }
 
-function cartElement($p_name, $p_details, $p_price, $path_img){
+function cartElement($p_id, $p_name, $p_details, $p_price, $path_img){
     $element = '<tr class="text-center">
     <td class="product-remove"><a href="del_product.php"><span class="ion-ios-close"></span></a></td>
     
