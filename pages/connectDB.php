@@ -46,49 +46,6 @@ class DB_conn
         return ($sql);
     }
 
-    function user_login($user, $pass)
-    {
-
-        if (isset($_POST['login'])) {
-            $user = $_POST['username'];
-            $pass = $_POST['password'];
-
-            if (empty($user)) {
-                $_SESSION['warning'] = 'กรุณากรอกอีเมล';
-                header('Location: login.php');
-            } else if (empty($pass)) {
-                $_SESSION['warning'] = 'กรุณากรอกรหัสผ่าน';
-                header('Location: login.php');
-            } else {
-
-                try {
-                    $stmt = mysqli_prepare($this->conn, "SELECT * FROM user WHERE username = ?");
-                    mysqli_stmt_bind_param($stmt, "s", $user);
-                    mysqli_stmt_execute($stmt);
-                    // $row = mysqli_fetch_row($checkData);
-                    $result = mysqli_stmt_get_result($stmt);
-
-                    if (mysqli_num_rows($result) > 0) {
-                        $user_data = mysqli_fetch_assoc($result);
-                        if ($user_data['password'] == $pass) {
-
-                            $_SESSION['user_id'] = $user_data['user_id'];
-                            header("location: index.php");
-                        } else {
-                            $_SESSION['error'] = 'รหัสผ่านผิด';
-                            header("location : login.php");
-                        }
-                    } else {
-                        $_SESSION['error'] = 'ไม่มี user นี้ในระบบ';
-                        header("location : login.php");
-                    }
-                } catch (Exception $e) {
-                    echo $e->getMessage();
-                }
-            }
-        }
-    }
-
     public function display_user()
     {
         $str = mysqli_query($this->conn, "SELECT * from user");

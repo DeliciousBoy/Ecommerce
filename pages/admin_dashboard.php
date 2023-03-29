@@ -1,12 +1,12 @@
+<?php
+    include_once("admin_display_user.php"); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php
-    include_once("admin_header.php");
-    ?>
-
+    <?php include_once("admin_header.php"); ?>
 </head>
 
 <body id="page-top">

@@ -3,9 +3,7 @@
 <html lang="en">
     
 <head>
-
     <?php include_once("admin_header.php"); ?>
-
 </head>
 
 <body id="page-top">
@@ -49,7 +47,7 @@
                                             <th>นามสุกล</th>
                                             <th>username</th>
                                             <th>telephone</th>
-                                            <th>role</th>
+                                            <!-- <th>role</th> -->
                                             <th>แก้ไข</th>
                                             <th>ลบ</th>
                                             
@@ -62,7 +60,7 @@
                                             <th>นามสุกล</th>
                                             <th>username</th>
                                             <th>telephone</th>
-                                            <th>role</th>
+                                            <!-- <th>role</th> -->
                                             <th>แก้ไข</th>
                                             <th>ลบ</th>
                                         </tr>
@@ -114,7 +112,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="login.php">Logout</a>
                 </div>
             </div>
         </div>
