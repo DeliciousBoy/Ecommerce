@@ -8,11 +8,11 @@ $pass =$_POST['password'];
 $first =$_POST['first_name'];
 $last =$_POST['last_name'];
 $tele =$_POST['telephone'];
+$role = "user";
 
+echo $user, $pass, $first, $last, $tele,$role;
 
-echo $user, $pass, $first, $last, $tele;
-
-$sql = $conndb->insert_user($user, $pass, $first, $last, $tele); 
+$sql = $conndb->insert_user($user, $pass, $first, $last, $tele,$role); 
 
 if(mysqli_query($con,$sql)){
     printf("%d Row insert. \n",mysqli_affected_rows($con));

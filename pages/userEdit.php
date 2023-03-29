@@ -7,11 +7,14 @@
     include_once("connectDB.php");
     $conn = new DB_conn;
     $sql = $conn->display_user_edit($_GET['id']);
+    // $row = $conn->insert_user($sql);
     while ($data = mysqli_fetch_array($sql)) {
         $fname = $data['first_name'];
         $lname = $data['last_name'];
         $uname = $data['username'];
         $telephone = $data['telephone'];
+        $role = $data['role'];
+        echo $role;
     }
     ?>
     <div class="container">
@@ -32,6 +35,13 @@
             <div class="mb-3">
                 <label for="telephone" class="form-label">telephone: </label>
                 <input type="int" class="form-control" id="telephone" name="telephone" value=<?php echo $telephone; ?>>
+            </div>
+            <div class="mb-3">
+                <select class="form-control" name="role" id="role">
+                    <option value="">-- Choose product types--</option>
+                        <option value= <?php $role = "user" ?>> user </option>
+                        <option value= <?php $role = "admin" ?>> admin </option>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary" id="edit" name="edit">บันทึกการเปลี่ยนแปลง </button>
         </form>

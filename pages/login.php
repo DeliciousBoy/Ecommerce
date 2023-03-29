@@ -44,9 +44,7 @@
 
 <body>
 	<!-- header -->
-	<?php
-	include_once("../pages/topbar.php");
-	?>
+	
 	<!-- header -->
 	<div class="container-fluid pt-5">
 		<div class="text-center mb-4">
@@ -106,9 +104,7 @@
 		
 		
 		<!-- footer -->
-		<?php
-		include_once("../pages/footer.php");
-		?>
+		
 
 </body>
 

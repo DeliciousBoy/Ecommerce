@@ -19,7 +19,7 @@ class DB_conn
         }
     }
 
-    function insert_user($user, $pass, $first, $last, $tele)
+    function insert_user($user, $pass, $first, $last, $tele, $role)
     {
         //ะำหะ
         $stmt = mysqli_prepare($this->conn, "SELECT * FROM user WHERE username = ?");
@@ -39,8 +39,8 @@ class DB_conn
         //     header('Location: signup.php');
         // }
         else {
-            $sql = "insert into user(username	,password	,first_name	,last_name	,telephone)
-                values('$user', '$pass', '$first', '$last', '$tele')";
+            $sql = "insert into user(username	,password	,first_name	,last_name	,telephone,role)
+                values('$user', '$pass', '$first', '$last', '$tele','$role')";
             $_SESSION['sucess'] = "สมัครสมาชิกเรียบร้อย <a href='login.php' class='alert-link'> คลิ๊กที่นี่</a> เพื่อเข้าสู่ระบบ";
             header("location: signup.php");
         }
