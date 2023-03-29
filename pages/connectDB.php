@@ -21,6 +21,7 @@ class DB_conn
 
     function insert_user($user, $pass, $first, $last, $tele)
     {
+        //ะำหะ
         $stmt = mysqli_prepare($this->conn, "SELECT * FROM user WHERE username = ?");
         mysqli_stmt_bind_param($stmt, "s", $user);
         mysqli_stmt_execute($stmt);
