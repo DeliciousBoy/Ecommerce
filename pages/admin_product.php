@@ -8,7 +8,8 @@
 </head>
 
 <body id="page-top">
-    
+        
+            
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -29,10 +30,29 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800"></h1>
                     
                         <div class="container-fluid pt-5">
+                                <?php if (isset($_SESSION['warning'])) { ?>
+                                            <div class="alert alert-warning" role = "alert">
+                                                <?php 
+                                                    echo $_SESSION['warning'];
+                                                    unset($_SESSION['warning']);
+                                                ?>
+                                            </div>
+
+                                        <?php } ?>
+                                        <?php if (isset($_SESSION['sucess'])) { ?>
+                                            <div class="alert alert-sucess" role = "alert">
+                                                <?php 
+                                                    echo $_SESSION['sucess'];
+                                                    unset($_SESSION['sucess']);
+                                                ?>
+                                            </div>
+
+                                        <?php } ?>
                             <h2 class="text-center mb-4"><span class="px-2">Add products</span></h2>
                             <form name="product" id="product" novalidate="novalidate" action="insertPro.php" enctype="multipart/form-data" method="post">
                                 <div class="control-group">

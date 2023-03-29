@@ -25,8 +25,8 @@ if ($fileextension == 'jpg' or $fileextension == 'png') {
                 $path_img = $path . $name;
                 $sql = $conn->insert_product($p_name, $p_details, $p_price, $p_category,$path_img);
                 if ($sql) {
-                    echo "<script>alert('Your product has been saved!')</script>";
-                    echo "<script>window.location='addproduct.php'</script>";
+                    $_SESSION['warning'] = 'เพิ่มสินค้าเรียบร้อย';
+                    header('location: admin_product.php');
                 } else {
                     echo "<script>alert( Error: " . $sql . ":-" . mysqli_error($conn) . ")</script>";
                 }
