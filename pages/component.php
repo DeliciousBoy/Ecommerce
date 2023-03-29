@@ -10,6 +10,7 @@ function component($p_id, $p_name, $p_details, $p_price, $path_img)
         </a>
         <div class="text py-3 pb-4 px-3">
             <input type="hidden" name="pName" value="' . $p_name . '">
+            <h1 class="pDetails">' . $p_name. '</h1>
             <p class="pDetails">' . $p_details . '</p>
             <p class="pPrice">Price: ' . $p_price . '</p>
             <input type="hidden" name="p_id" value="' . $p_id . '">
