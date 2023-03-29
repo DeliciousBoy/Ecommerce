@@ -17,7 +17,7 @@ $position = strpos($name, ".");
 $fileextension = substr($name, $position + 1);
 $fileextension = strtolower($fileextension);
 echo $fileextension;
-if ($fileextension == 'jpg' or $fileextension == 'png') {
+if ($fileextension == 'jpg' or $fileextension == 'png' or $fileextension == 'jpeg') {
     if (isset($name)) {
         $path = '../p_img/';
         if (!empty($name)) {
