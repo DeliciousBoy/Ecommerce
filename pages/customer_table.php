@@ -16,7 +16,7 @@
             <td class="align-middle"><?php echo $data['username'] ?></td>
             <td class="align-middle"><?php echo $data['telephone'] ?></td>
             <td class="align-middle"><?php echo $data['role'] ?></td>
-            <td class="align-middle"><a href="userEdit.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary">Edit</a></td>
+            <td class="align-middle"><a href="admin_user_edit.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary">Edit</a></td>
             <td class="align-middle"><a href="deluser.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary" onclick="return confirm ('คุณต้องการลบข้อมูลใช่หรือไม่')"><i class="fa fa-times"></i></a></td>
         </tr>
     <?php $i = $i + 1;
