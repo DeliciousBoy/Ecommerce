@@ -24,9 +24,12 @@ function component($p_id, $p_name, $p_details, $p_price, $path_img)
 }
 
 function cartElement($p_id, $p_name, $p_details, $p_price, $path_img){
-    $element = '<tr class="text-center">
-    <td class="product-remove"><a href="del_product.php"><span class="ion-ios-close"></span></a></td>
-    
+    $element = ' <form action="#" method="post">
+    <tr class="text-center">
+    <td><button class="product-remove" type="submit" name="remove" value="' . $p_id . '" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
+    <span class="ion-ios-close"></span>
+    </button></td>
+
     <td class="image-prod"><div class="img" style="background-image:url('.$path_img.');"></div></td>
     
     <td class="pName">
@@ -42,7 +45,9 @@ function cartElement($p_id, $p_name, $p_details, $p_price, $path_img){
   </td>
     
     <td class="total">$'.$p_price.'</td>
-  </tr>';
+  </tr>
+  </form>';
   return $element;
 }
+
 ?>

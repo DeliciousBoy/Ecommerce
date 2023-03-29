@@ -1,9 +1,22 @@
 <?php
-session_start();
+//session_start();
 include_once("connectDB.php");
 require_once("component.php");
 $conn = new DB_conn;
 $sql = $conn->select_product();
+
+if (isset($_POST["remove"])) {
+    $p_id = $_POST["remove"];
+
+    foreach ($_SESSION["cart"] as $key => $value) {
+        if ($value["p_id"] == $p_id) {
+            unset($_SESSION["cart"][$key]);
+        }
+    }
+
+    //echo "<script>alert('Product has been removed...!')</script>";
+    echo "<script>window.location = 'cart.php'</script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,33 +52,42 @@ include_once('topbar.php')
                                 <th>Total</th>
                             </tr>
                         </thead>
+                        <?php //print_r($_SESSION['cart']); 
+                        ?>
                         <tbody>
                             <?php
-                            $p_id = array_column($_SESSION['cart'], 'p_id');
-                            $total = 0;
-                            //$sql = "SELECT * FROM product WHERE p_id IN (" . implode(',', $p_id) . ")";
-                            //$query = mysqli_query($conn, $sql);
-                            while ($data = mysqli_fetch_array($sql)) {
-                                echo cartElement($data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
-                                $total = $total+$data['pPrice'];
+                            if (isset($_SESSION['cart'])) {
+                                $p_id = array_column($_SESSION['cart'], 'p_id');
+                                $total = 0;
+                                //$sql = "SELECT * FROM product WHERE p_id IN (" . implode(',', $p_id) . ")";
+                                //$query = mysqli_query($conn, $sql);
+                                while ($data = mysqli_fetch_array($sql)) {
+                                    foreach ($_SESSION['cart'] as $key => $value) {
+                                        if ($value['p_id'] == $data['p_id']) {
+                                            echo cartElement($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
+                                        $total = $total + ($data['pPrice'] /* $value['quantity']*/);
+                                        }
+                                    }
+                                }
                             }
 
                             ?>
+
                         </tbody>
                     </table>
                     <div class="row justify-content-start">
-    			<div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
-    				<div class="cart-total mb-3">
-    					<h3>Cart Totals</h3>
-    					<p class="d-flex total-price">
-    						<span>total</span>
-    						<span><?php echo $total ?></span>
-    					</p>
-    				</div>
-                <p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
-            </div>
-        </div>
-    </div>
+                        <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+                            <div class="cart-total mb-3">
+                                <h3>Cart Totals</h3>
+                                <p class="d-flex total-price">
+                                    <span>total</span>
+                                    <span><?php echo $total ?></span>
+                                </p>
+                            </div>
+                            <p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+                        </div>
+                    </div>
+                </div>
 </section>
 
 

@@ -11,7 +11,7 @@ if (isset($_POST['p_add'])) {
     if (isset($_POST['p_id']) && isset($_POST['pName'])) {
         $p_id = $_POST['p_id'];
         $p_name = $_POST['pName'];
-        //echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";
+        //echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";*/
         if (isset($_SESSION['cart'])) {
             $item_array_id = array_column($_SESSION['cart'], 'p_id');
             if (in_array($p_id, $item_array_id)) {
@@ -49,9 +49,9 @@ include_once('topbar.php')
         </div>
     </div>
 </div>
-
 <!--Products-->
 <section class="ftco-section bg-light">
+    
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-lg-10 order-md-last">
@@ -85,6 +85,7 @@ include_once('topbar.php')
                                             while ($row_data = mysqli_fetch_assoc($sql2)) {
                                                 $category_name = $row_data['c_name'];
                                                 $category_id = $row_data['id'];
+                                                //echo  "<li><a href='shop.php?category=all</a></li>";
                                                 echo "<li><a href='shop.php?category=$category_id'>$category_name</a></li>";
                                             }
                                             ?>
