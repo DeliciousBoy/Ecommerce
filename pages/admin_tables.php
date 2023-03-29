@@ -47,7 +47,7 @@
                                             <th>นามสุกล</th>
                                             <th>username</th>
                                             <th>telephone</th>
-                                            <!-- <th>role</th> -->
+                                            <th>role</th>
                                             <th>แก้ไข</th>
                                             <th>ลบ</th>
                                             
@@ -60,7 +60,7 @@
                                             <th>นามสุกล</th>
                                             <th>username</th>
                                             <th>telephone</th>
-                                            <!-- <th>role</th> -->
+                                            <th>role</th>
                                             <th>แก้ไข</th>
                                             <th>ลบ</th>
                                         </tr>

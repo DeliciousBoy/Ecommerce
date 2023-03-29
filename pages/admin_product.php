@@ -1,4 +1,3 @@
-
 <?php require_once('admin.php'); ?>
 
 <!DOCTYPE html>

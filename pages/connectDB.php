@@ -30,7 +30,7 @@ class DB_conn
         if (mysqli_num_rows($result) > 0) {
             $_SESSION['warning'] = "มีชื่อ user นี้ในระบบแล้ว";
             header('Location: signup.php');
-        } else if (!filter_var($tele, FILTER_VALIDATE_INT)) {
+        } else if (!ctype_xdigit($tele)) {
             $_SESSION['warning'] = 'เบอร์โทรต้องเป็นตัวเลขเท่านั้น';
             header('Location: signup.php');
         }
