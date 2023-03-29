@@ -54,7 +54,7 @@
         $lname = $_POST['lname'];
         $uname = $_POST['uname'];
         $telephone = $_POST['telephone'];
-        $sql = $conn->edit_user($fname, $lname,$uname, $telephone, $id);
+        $sql = $conn->edit_user($fname, $lname,$uname, $telephone, $id,$role);
         echo $sql;
         if ($sql) {
             echo "<script>alert('บันทึกข้อมูลสําเร็จ')</script>";

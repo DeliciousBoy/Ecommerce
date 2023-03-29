@@ -57,9 +57,9 @@ class DB_conn
         $str = mysqli_query($this->conn, "SELECT * from user where id = $id");
         return $str;
     }
-    public function edit_user($fname, $lastname, $uname, $telephone, $id)
+    public function edit_user($fname, $lastname, $uname, $telephone, $id,$role)
     {
-        $str = mysqli_query($this->conn, "UPDATE user SET first_name = '$fname', last_name ='$lastname',username = '$uname',telephone = '$telephone' WHERE id = $id ");
+        $str = mysqli_query($this->conn, "UPDATE user SET first_name = '$fname', last_name ='$lastname',username = '$uname',telephone = '$telephone', role ='$role' WHERE id = $id ");
         return $str;
     }
     public function del_user($id)
