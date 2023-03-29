@@ -9,15 +9,7 @@
 </head>
 
 <body id="page-top">
-    <?php if (isset($_SESSION['warning'])) { ?>
-        <div class="alert alert-warning" role = "alert">
-            <?php 
-                echo $_SESSION['warning'];
-                unset($_SESSION['warning']);
-            ?>
-        </div>
-
-    <?php } ?>
+    
     <!-- Page Wrapper -->
     <div id="wrapper">
 
