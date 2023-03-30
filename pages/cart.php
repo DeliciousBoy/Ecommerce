@@ -11,12 +11,17 @@ if (isset($_POST["remove"])) {
     foreach ($_SESSION["cart"] as $key => $value) {
         if ($value["p_id"] == $p_id) {
             unset($_SESSION["cart"][$key]);
+            break; // หยุดการวนลูปทันทีหลังจากลบสินค้าเดียว
         }
     }
 
     //echo "<script>alert('Product has been removed...!')</script>";
     echo "<script>window.location = 'cart.php'</script>";
 }
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +57,7 @@ include_once('topbar.php')
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <?php //print_r($_SESSION['cart']); 
+                        <?php print_r($_SESSION['cart']); 
                         ?>
                         <tbody>
                             <?php

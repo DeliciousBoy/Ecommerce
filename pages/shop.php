@@ -13,20 +13,12 @@ if (isset($_POST['p_add'])) {
         $p_name = $_POST['pName'];
         //echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";*/
         if (isset($_SESSION['cart'])) {
-            $item_array_id = array_column($_SESSION['cart'], 'p_id');
-            if (in_array($p_id, $item_array_id)) {
-                /*echo '<script> alert ("This product is already in your cart")</script>';
-                echo '<script> window.location="shop.php"</script>';*/
-            } else {
-                $count = count($_SESSION['cart']);
-                $item_array = array('p_id' => $p_id, 'p_name' => $p_name);
-                $_SESSION['cart'][$count] = $item_array;
-                //print_r($_SESSION['cart']);
-            }
+            $count = count($_SESSION['cart']);
+            $item_array = array('p_id' => $p_id, 'p_name' => $p_name);
+            $_SESSION['cart'][$count] = $item_array;
         } else {
             $item_array = array('p_id' => $p_id, 'p_name' => $p_name);
             $_SESSION['cart'] = array($item_array);
-            //print_r($_SESSION['cart']);
         }
     } else {
         echo "<script>alert('Error: Missing key(s) in POST data')</script>";
