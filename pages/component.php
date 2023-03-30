@@ -1,6 +1,6 @@
 <?php
 
-function component($p_id, $p_name, $p_details, $p_price, $path_img)
+function component($p_id, $p_name, $p_price, $path_img)
 {
     $element = '
     <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
@@ -12,7 +12,6 @@ function component($p_id, $p_name, $p_details, $p_price, $path_img)
         <form action="#" method="post" enctype="multipart/form-data" >
             <input type="hidden" name="pName" value="' . $p_name . '">
             <h1 class="pDetails">' . $p_name. '</h1>
-            <p class="pDetails">' . $p_details . '</p>
             <p class="pPrice">Price: ' . $p_price . '</p>
             <input type="hidden" name="p_id" value="' . $p_id . '">
             <button class="add-to-cart text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></button>
