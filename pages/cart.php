@@ -10,7 +10,7 @@ if (isset($_POST["remove"])) {
 
     foreach ($_SESSION["cart"] as $key => $value) {
         if ($value["p_id"] == $p_id) {
-            unset($_SESSION["cart"][$key]);
+        unset($_SESSION["cart"][$key]);
             break; // หยุดการวนลูปทันทีหลังจากลบสินค้าเดียว
         }
     }
