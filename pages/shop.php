@@ -51,14 +51,14 @@ include_once('topbar.php')
                     <?php
                     if (!isset($_GET['category'])) {
                         while ($data = mysqli_fetch_array($sql)) {
-                            echo component($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
+                            echo component($data['p_id'], $data['pName'], $data['pPrice'], $data['pImage']);
                         }
                     }
                     if (isset($_GET['category'])) {
                         $id = $_GET['category'];
                         $sql3 = $conn->select_product2($id);
                         while ($data = mysqli_fetch_array($sql3)) {
-                            echo component($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
+                            echo component($data['p_id'], $data['pName'], $data['pPrice'], $data['pImage']);
                         }
                     }
                     ?>
@@ -96,8 +96,4 @@ include_once('topbar.php')
 <?php
 include_once('footer.php');
 ?>
-
-
-
-
 </html>
