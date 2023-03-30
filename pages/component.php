@@ -1,5 +1,6 @@
 <?php
 
+
 function component($p_id, $p_name, $p_details, $p_price, $path_img)
 {
     $element = '<form action="#" method="post" enctype="multipart/form-data" >

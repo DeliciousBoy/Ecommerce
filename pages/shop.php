@@ -5,7 +5,7 @@ include_once("connectDB.php");
 $conn = new DB_conn;
 $sql = $conn->select_product();
 $sql2 = $conn->select_category();
-//c
+
 
 if (isset($_POST['p_add'])) {
     if (isset($_POST['p_id']) && isset($_POST['pName'])) {
