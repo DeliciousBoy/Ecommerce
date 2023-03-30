@@ -13,20 +13,12 @@ if (isset($_POST['p_add'])) {
         $p_name = $_POST['pName'];
         //echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";*/
         if (isset($_SESSION['cart'])) {
-            $item_array_id = array_column($_SESSION['cart'], 'p_id');
-            if (in_array($p_id, $item_array_id)) {
-                /*echo '<script> alert ("This product is already in your cart")</script>';
-                echo '<script> window.location="shop.php"</script>';*/
-            } else {
-                $count = count($_SESSION['cart']);
-                $item_array = array('p_id' => $p_id, 'p_name' => $p_name);
-                $_SESSION['cart'][$count] = $item_array;
-                //print_r($_SESSION['cart']);
-            }
+            $count = count($_SESSION['cart']);
+            $item_array = array('p_id' => $p_id, 'p_name' => $p_name);
+            $_SESSION['cart'][$count] = $item_array;
         } else {
             $item_array = array('p_id' => $p_id, 'p_name' => $p_name);
             $_SESSION['cart'] = array($item_array);
-            //print_r($_SESSION['cart']);
         }
     } else {
         echo "<script>alert('Error: Missing key(s) in POST data')</script>";
@@ -59,14 +51,14 @@ include_once('topbar.php')
                     <?php
                     if (!isset($_GET['category'])) {
                         while ($data = mysqli_fetch_array($sql)) {
-                            echo component($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
+                            echo component($data['p_id'], $data['pName'], $data['pPrice'], $data['pImage']);
                         }
                     }
                     if (isset($_GET['category'])) {
                         $id = $_GET['category'];
                         $sql3 = $conn->select_product2($id);
                         while ($data = mysqli_fetch_array($sql3)) {
-                            echo component($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
+                            echo component($data['p_id'], $data['pName'], $data['pPrice'], $data['pImage']);
                         }
                     }
                     ?>
@@ -104,6 +96,4 @@ include_once('topbar.php')
 <?php
 include_once('footer.php');
 ?>
-
-
 </html>
