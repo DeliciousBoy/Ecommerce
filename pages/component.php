@@ -1,6 +1,6 @@
 <?php
 
-function component($p_id, $p_name, $p_details, $p_price, $path_img)
+function component($p_id, $p_name, $p_price, $path_img)
 {
     $element = '
     <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
@@ -49,5 +49,6 @@ function cartElement($p_id, $p_name, $p_details, $p_price, $path_img){
   </form>';
   return $element;
 }
+
 
 ?>

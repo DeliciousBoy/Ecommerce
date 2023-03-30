@@ -164,5 +164,4 @@ include_once('footer.php');
 </script>
 
 </body>
-
 </html>

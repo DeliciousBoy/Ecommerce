@@ -92,7 +92,6 @@ include_once('topbar.php')
             </div>
         </div>
 </section>
-
 <?php
 include_once('footer.php');
 ?>
