@@ -1,5 +1,6 @@
 <?php
-//session_start();
+
+require_once("user.php");
 include_once("connectDB.php");
 require_once("component.php");
 $conn = new DB_conn;
@@ -162,6 +163,7 @@ include_once('footer.php');
 
     });
 </script>
+<!--logout -->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">

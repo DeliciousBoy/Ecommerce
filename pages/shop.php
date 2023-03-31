@@ -1,7 +1,9 @@
 <?php
 
+require_once("user.php");
 require_once("component.php");
 include_once("connectDB.php");
+
 $conn = new DB_conn;
 $sql = $conn->select_product();
 $sql2 = $conn->select_category();
@@ -92,7 +94,7 @@ include_once('topbar.php')
             </div>
         </div>
 </section>
-
+<!--logout -->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -110,7 +112,7 @@ include_once('topbar.php')
                 </div>
             </div>
         </div>
-    </div>
+</div>
 <?php
 include_once('footer.php');
 ?>
