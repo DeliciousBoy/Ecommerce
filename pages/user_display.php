@@ -3,7 +3,7 @@
     $conndb = new DB_conn; 
     $con = $conndb->conn;
 
-    if (isset($_SESSION['user_login'])) {
+    if (isset($_SESSION['user_login']) or isset($_SESSION['admin_login'])) {
 
         //ส่วนในการดึงข้อมูลจาก table 
         $user = $_SESSION['user_login'];
