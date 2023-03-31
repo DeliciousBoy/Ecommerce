@@ -94,4 +94,10 @@ class DB_conn
         $str = mysqli_query($this->conn, $strSQL);
         return $str;
     }
+    public function select_singlePro($p_id)
+    {
+        $strSQL = "SELECT * FROM product WHERE p_id ='$p_id' " ;
+        $str = mysqli_query($this->conn, $strSQL);
+        return $str;
+    }
 }

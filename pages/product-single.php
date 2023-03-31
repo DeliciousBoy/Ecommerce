@@ -15,14 +15,13 @@ if(isset($_GET['product_id'])){
 	$id = $_GET['product_id'];
 	$product_data = $conn->select_singlePro($id);
 	$product = mysqli_fetch_array($product_data);
-	echo $product['pImage'];
 ?>
 <body class="goto-here">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 mb-5 ftco-animate">
-					<a href="<?php $product['pImage']?>" class="image-popup prod-img-bg"><img src="<?php $product['pImage']?>" class="img-fluid" alt="Colorlib Template"></a>
+					<a href="<?php echo $product['pImage']?>" class="image-popup prod-img-bg"><img src="<?php echo $product['pImage']?>" class="img-fluid" alt="Colorlib Template"></a>
 				</div>
 				<div class="col-lg-6 product-details pl-md-5 ftco-animate">
 					<h3><?php echo $product['pName']?></h3>
