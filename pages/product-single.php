@@ -20,7 +20,7 @@ if (isset($_POST['p_add'])) {
     } else {
         echo "<script>alert('Error: Missing key(s) in POST data')</script>";
     }
-}
+}/**/
 ?>
 <!DOCTYPE html>
 <html lang="en">

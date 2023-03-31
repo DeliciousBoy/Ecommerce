@@ -92,9 +92,6 @@ function singlePro($p_id, $p_name, $p_details, $p_price, $path_img) {
     ';
     return $element;
 }
-
-
-
-
+//
 ?>
 
