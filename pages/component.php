@@ -15,7 +15,7 @@ function component($p_id, $p_name, $p_price, $path_img)
             <p class="pPrice">Price: ' . $p_price . '</p>
             <input type="hidden" name="p_id" value="' . $p_id . '">
             <button class="add-to-cart text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></button>
-            <button class="buy-now text-center py-2" type="submit" name="p_add" id="p_add"><a href="checkout.php">Buy now</a><span><i class="ion-ios-cart ml-1"></i></span></button>
+            <button class="buy-now text-center py-2" type="submit" name="p_add" id="p_add"><a href="cart.php">Buy now</a><span><i class="ion-ios-cart ml-1"></i></span></button>
             </form>
         </div>
     </div>
@@ -82,8 +82,8 @@ function singlePro($p_id, $p_name, $p_details, $p_price, $path_img) {
                         <div class="w-100"></div>
                     </div>
                     <p>
-                        <button class="btn btn-black py-3 px-5 mr-2" type="submit" name="p_add" id="p_add">Add to Cart</button>
-                        <a href="cart.php?p_id=' . $p_id . '" class="btn btn-primary py-3 px-5">Buy now</a>
+                        <button class="add-to-cart text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></button>
+                        <button class="buy-now text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><a href="cart.php?p_id=' . $p_id . '">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a></button></a>
                     </p>
                 </div>
             </div>
