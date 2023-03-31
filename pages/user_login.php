@@ -7,7 +7,7 @@
     if(isset($_POST['login'])){
         $user = $_POST['username'];
         $pass = $_POST['password'];
-
+        
         if(empty($user)){
             $_SESSION['warning'] = 'กรุณากรอกอีเมล';
             header('Location: login.php');
@@ -29,7 +29,7 @@
                         header("location: admin_tables.php");
                     }else{
                         $_SESSION['user_login'] = $user_data['username'];
-                        header("location: index.php");
+                        header("location: shop.php");
                     }
                 }else{
                     $_SESSION['warning'] = 'รหัสผ่านผิด';

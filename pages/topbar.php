@@ -1,5 +1,5 @@
 <?php 
-    include_once("admin_display_user.php");
+    include_once("user_display.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,23 +61,23 @@
 					</a></li>
 				<?php //echo $user_data['first_name'] . ' ' . $user_data['last_name'] ?>
 				<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php //echo $user_data['first_name'] . ' ' . $user_data['last_name'] ?></span>
-						<img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $user_data['first_name'].' '.$user_data['last_name'] ?></span>
+							<!-- <img class="img-profile rounded-circle" src="img/undraw_profile.svg"> -->
 					</a>
 					<!-- Dropdown - User Information -->
 					<div class="dropdown-menu" aria-labelledby="dropdown04">
 						<a class="dropdown-item" href="#">Profile</a>
-						<a class="dropdown-item" href="#">Settings
-						</a>
-						<a class="dropdown-item" href="#">Activity Log
-						</a>
+						<a class="dropdown-item" href="#">Settings</a>
+						<a class="dropdown-item" href="#">Activity Log</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">Logout
-						</a>
+						<a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
 					</div>
 				</li>
+				
 			</ul>
 		</div>
+		
 	</div>
 </nav>
 </body>
