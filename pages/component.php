@@ -5,7 +5,7 @@ function component($p_id, $p_name, $p_price, $path_img)
     $element = '
     <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
     <div class="product d-flex flex-column">
-        <a href="product-single.php?product_id='.$p_id.'" class="img-prod"><img class="img-fluid img-thumbnail" src="' . $path_img . '" alt="Colorlib Template">
+        <a href="product-single.php?p_id='.$p_id.'" class="img-prod"><img class="img-fluid img-thumbnail" src="' . $path_img . '" alt="Colorlib Template">
             <div class="overlay"></div>
         </a>
         <div class="text py-3 pb-4 px-3">
@@ -50,4 +50,51 @@ function cartElement($p_id, $p_name, $p_details, $p_price, $path_img){
   return $element;
 }
 
+function singlePro($p_id, $p_name, $p_details, $p_price, $path_img) {
+    $element = '
+    <form action="#" method="post" enctype="multipart/form-data" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 ftco-animate">
+                    <a href="' . $path_img . '" class="image-popup prod-img-bg"><img src="' . $path_img . '" class="img-fluid" alt="Product Image"></a>
+                </div>
+                <div class="col-lg-6 product-details pl-md-5 ftco-animate">
+                    <input type="hidden" name="pName" value="' . $p_name . '">
+                    <h3>' . $p_name . '</h3>
+                    <p>' . $p_details . '</p>
+                    <p class="price"><span>Price : ' . $p_price . ' baht</span></p>
+                    <input type="hidden" name="p_id" value="' . $p_id . '">
+                    <div class="row mt-4">
+                        <div class="w-100"></div>
+                        <div class="input-group col-md-6 d-flex mb-3">
+                            <span class="input-group-btn mr-2">
+                                <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
+                                    <i class="ion-ios-remove"></i>
+                                </button>
+                            </span>
+                            <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+                            <span class="input-group-btn ml-2">
+                                <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                    <i class="ion-ios-add"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="w-100"></div>
+                    </div>
+                    <p>
+                        <button class="btn btn-black py-3 px-5 mr-2" type="submit" name="p_add" id="p_add">Add to Cart</button>
+                        <a href="cart.php?p_id=' . $p_id . '" class="btn btn-primary py-3 px-5">Buy now</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+    ';
+    return $element;
+}
+
+
+
+
 ?>
+
