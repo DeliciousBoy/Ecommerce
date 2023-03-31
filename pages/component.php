@@ -67,31 +67,48 @@ function singlePro($p_id, $p_name, $p_details, $p_price, $path_img) {
                     <div class="row mt-4">
                         <div class="w-100"></div>
                         <div class="input-group col-md-6 d-flex mb-3">
-                            <span class="input-group-btn mr-2">
-                                <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
-                                    <i class="ion-ios-remove"></i>
-                                </button>
-                            </span>
-                            <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
-                            <span class="input-group-btn ml-2">
-                                <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-                                    <i class="ion-ios-add"></i>
-                                </button>
-                            </span>
-                        </div>
+                        <span class="input-group-btn mr-2">
+            <button type="button" class="quantity-left-minus btn btn-outline-secondary" data-type="minus" data-field="">
+                <i class="ion-ios-remove"></i>
+            </button>
+        </span>
+        <input type="text" id="quantity" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+        <span class="input-group-btn ml-2">
+            <button type="button" class="quantity-right-plus btn btn-outline-secondary" data-type="plus" data-field="">
+                <i class="ion-ios-add"></i>
+            </button>
+        </span>
+    
                         <div class="w-100"></div>
                     </div>
                     <p>
                         <button class="add-to-cart text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></button>
                         <button class="buy-now text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><a href="cart.php?p_id=' . $p_id . '">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a></button></a>
                     </p>
+                    </form>
                 </div>
             </div>
         </div>
-    </form>
+        <script>
+    // Get the quantity input and the plus/minus buttons
+var quantity = document.getElementById("quantity");
+var plusBtn = document.querySelector(".quantity-right-plus");
+var minusBtn = document.querySelector(".quantity-left-minus");
+
+// Add click event listeners to the plus/minus buttons
+plusBtn.addEventListener("click", function() {
+    quantity.value = parseInt(quantity.value) + 1;
+});
+
+minusBtn.addEventListener("click", function() {
+    if (quantity.value > 1) {
+        quantity.value = parseInt(quantity.value) - 1;
+    }
+});
+
+    </script>
     ';
     return $element;
 }
 //
 ?>
-
