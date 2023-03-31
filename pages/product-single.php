@@ -1,5 +1,4 @@
 <?php
-include_once('topbar.php');
 include_once('connectDB.php');
 require_once("component.php");  
 $conn = new DB_conn;
@@ -25,6 +24,9 @@ if (isset($_POST['p_add'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include_once('topbar.php')
+?>
 <head>
     <!-- Head content here -->
 </head>
