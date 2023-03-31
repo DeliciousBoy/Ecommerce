@@ -5,7 +5,7 @@ function component($p_id, $p_name, $p_price, $path_img)
     $element = '
     <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
     <div class="product d-flex flex-column">
-        <a href="#" class="img-prod"><img class="img-fluid img-thumbnail" src="' . $path_img . '" alt="Colorlib Template">
+        <a href="product-single.php?product_id='.$p_id.'" class="img-prod"><img class="img-fluid img-thumbnail" src="' . $path_img . '" alt="Colorlib Template">
             <div class="overlay"></div>
         </a>
         <div class="text py-3 pb-4 px-3">
@@ -49,6 +49,5 @@ function cartElement($p_id, $p_name, $p_details, $p_price, $path_img){
   </form>';
   return $element;
 }
-
 
 ?>
