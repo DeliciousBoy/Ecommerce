@@ -86,12 +86,7 @@ include_once('topbar.php')
                             <h3>Cart Totals</h3>
                             <p class="d-flex total-price">
                                 <span>total</span>
-                                <span><?php if(isset($total)){
-                                    echo $total;
-                                }else{
-                                    $total =0;
-                                    echo $total;
-                                }  ?></span>
+                                <span><?php echo $total ?></span>
                             </p>
                         </div>
                         <?php
