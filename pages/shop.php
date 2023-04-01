@@ -7,7 +7,7 @@ include_once("connectDB.php");
 $conn = new DB_conn;
 $sql = $conn->select_product();
 $sql2 = $conn->select_category();
-$quantity = 1;
+/*$quantity = 1;
 
 if (isset($_POST['p_add'])) {
     if (isset($_POST['p_id']) && isset($_POST['pName']) && isset($_POST['quantity'])) {
@@ -38,7 +38,7 @@ if (isset($_POST['p_add'])) {
     } else {
         echo "<script>alert('Error: Missing key(s) in POST data')</script>";
     }
-}
+}*/
 
 
 

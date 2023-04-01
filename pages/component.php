@@ -1,5 +1,37 @@
 <?php
 
+$quantity = 1;
+
+if (isset($_POST['p_add'])) {
+    if (isset($_POST['p_id']) && isset($_POST['pName']) && isset($_POST['quantity'])) {
+        //unset($_SESSION["cart"]);
+        $p_id = $_POST['p_id'];
+        $p_name = $_POST['pName'];
+        $quantity = $_POST['quantity'];
+        if (isset($_SESSION['cart'])) {
+            $cart = $_SESSION['cart'];
+            $item_exists = false;
+            foreach ($cart as &$item) {
+                if ($item['p_id'] == $p_id) {
+                    $item['quantity'] += $quantity;
+                    $item_exists = true;
+                    break;
+                }
+            }
+            if (!$item_exists) {
+                $item_array = array('p_id' => $p_id, 'pName' => $p_name, 'quantity' => $quantity);
+                $cart[] = $item_array;
+            }
+            $_SESSION['cart'] = $cart;
+        } else {
+            $item_array = array('p_id' => $p_id, 'pName' => $p_name, 'quantity' => $quantity);
+            $_SESSION['cart'] = array($item_array);
+        }
+        // echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";
+    } else {
+        echo "<script>alert('Error: Missing key(s) in POST data')</script>";
+    }
+}
 function component($p_id, $p_name, $p_price, $quantity,$path_img)
 {
     $element = '
