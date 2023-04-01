@@ -45,25 +45,37 @@
             </div>
         </div>
     </li>
-
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading">
+        product
+    </div>
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="admin_product.php">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>product</span></a>
+            <span>Add Product</span></a>
     </li>
-
+    
     <li class="nav-item">
         <a class="nav-link" href="admin_ptest.php">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Edit product</span></a>
+            <span>Edit Product</span></a>
     </li>
-
+    <hr class="sidebar-divider">
+    <div class="sidebar-heading">
+        customer & order
+    </div>
     <!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="admin_tables.php">
             <i class="fas fa-fw fa-table"></i>
-            <span>customers</span></a>
+            <span>Customers</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="admin_order.php">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Order</span></a>
     </li>
 
     <!-- Divider -->

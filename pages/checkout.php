@@ -117,7 +117,7 @@ include_once('topbar.php')
 					$discount = 0;
 					$delivery = 0;
 					$total = $subtotal-$discount;
-					// echo $_SESSION['p_add'];
+					// print_r([$_SESSION['cart']]);
 				?>
 				
 				<div class="row mt-5 pt-3 d-flex">

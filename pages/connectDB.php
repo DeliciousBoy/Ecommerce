@@ -130,5 +130,9 @@ class DB_conn
         $stmt->close();
         return $result;
     }
+    public function order_display(){
+        $str = mysqli_query($this->conn, "SELECT * from user_address");
+        return $str;
+    }
     
 }
