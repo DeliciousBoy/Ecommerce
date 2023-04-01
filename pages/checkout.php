@@ -5,9 +5,7 @@ include_once("connectDB.php");
 $conn = new DB_conn;
 $sql = $conn->select_product();
 
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -100,8 +98,6 @@ include_once('topbar.php')
                 </div>
 	            </div>
 	          </form><!-- END -->
-
-
 
 	          <div class="row mt-5 pt-3 d-flex">
 	          	<div class="col-md-6 d-flex">

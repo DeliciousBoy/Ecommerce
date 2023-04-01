@@ -2605,6 +2605,42 @@ input[type="button"].btn-block {
   margin-top: 0;
   margin-bottom: 0.125rem; }
 
+  .button-add-to-cart {
+    background-color: #28a745; /* กำหนดสีพื้นหลังของปุ่ม */
+    border: none; /* กำหนดไม่มีเส้นขอบบนปุ่ม */
+    color: #fff; /* กำหนดสีตัวอักษรของปุ่ม */
+    padding: 10px 15px; /* กำหนดระยะห่างของขอบและเนื้อหาในปุ่ม */
+    text-align: center; /* กำหนดให้เนื้อหาอยู่ตรงกลางของปุ่ม */
+    text-decoration: none; /* กำหนดไม่มีการเพิ่มเส้นใต้ตัวอักษรในปุ่ม */
+    display: inline-block; /* กำหนดให้ปุ่มแสดงผลเป็นบล็อกอินไลน์ */
+    font-size: 16px; /* กำหนดขนาดตัวอักษรของปุ่ม */
+    margin: 10px 0; /* กำหนดระยะห่างระหว่างปุ่ม */
+    cursor: pointer; /* กำหนดเมาส์เป็นสัญลักษณ์ของการคลิก */
+    width: 100%; /* กำหนดขนาดความกว้างของปุ่มเท่ากับความกว้างของพื้นที่ที่สามารถคลิกได้ */
+    max-width: 300px; /* กำหนดขนาดความกว้างสูงสุดของปุ่ม */
+  }
+  
+
+
+  #p_add {
+    position: relative;
+    top: 10px;
+  }
+  
+  .btn-outline-primary {
+    color: #007bff;
+    background-color: transparent;
+    border-color: #007bff;
+  }
+  
+  .btn-outline-primary:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+
+
 .dropup .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;

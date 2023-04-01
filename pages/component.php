@@ -17,8 +17,6 @@ function component($p_id, $p_name, $p_price, $quantity,$path_img)
             <div class="quantity">
             <input type="hidden" name="quantity" value="' . $quantity . '">
             <input type="number" name="quantity" value="1" min="1" max="100">
-          
-
             </div>
             <button class="add-to-cart text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></button>
             <button class="buy-now text-center py-2" type="submit" name="p_add" id="p_add"><a href="cart.php">Buy now</a><span><i class="ion-ios-cart ml-1"></i></span></button>
@@ -62,7 +60,6 @@ function cartElement($p_id, $p_name, $p_details, $p_price, $quantity, $path_img)
         </tr>
     </form>
     ';
-
     return $element;
 }
 
@@ -116,10 +113,8 @@ function singlePro($p_id, $p_name, $p_details, $p_price, $quantity, $path_img) {
         quantity.value = parseInt(quantity.value) - 1;
     }
     });
-
     </script>
     ';
     return $element;
 }
-
 ?>
