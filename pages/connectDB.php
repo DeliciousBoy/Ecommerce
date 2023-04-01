@@ -72,6 +72,21 @@ class DB_conn
     }
 
     // ---------------------products --------------------
+    public function display_products()
+    {
+        $str = mysqli_query($this->conn, "SELECT * from product");
+        return $str;
+    }
+    public function display_product_edit($p_id)
+    {
+        $str = mysqli_query($this->conn, "SELECT * from product where p_id = $p_id");
+        return $str;
+    }
+    public function edit_product($id,$pname, $pdetail, $price,$pimage, $c_id)
+    {
+        $str = mysqli_query($this->conn, "UPDATE user SET pName = '$pname', pDetails ='$pdetail',pPrice= '$price',pImage = '$pimage',id='$c_id' WHERE p_id = $id ");
+        return $str;
+    }
     public function select_category()
     {
         $strSQL = "SELECT * FROM category ORDER BY c_name ASC";
