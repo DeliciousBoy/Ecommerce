@@ -53,7 +53,7 @@
 						<?php
 						if (isset($_SESSION['cart'])) {
 							$count = count($_SESSION['cart']);
-							echo '<spand id = "cart_count">' . $count . '</spand>';
+							echo '<spand id = "cart_count">' . ($count+$quantity-1) . '</spand>';
 						} else {
 							echo '<spand id="cart_count">0</spand>';
 						}
