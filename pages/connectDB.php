@@ -21,7 +21,7 @@ class DB_conn
 
     function insert_user($user, $pass, $first, $last, $tele, $role)
     {
-        //ะำหะ
+        
         $stmt = mysqli_prepare($this->conn, "SELECT * FROM user WHERE username = ?");
         mysqli_stmt_bind_param($stmt, "s", $user);
         mysqli_stmt_execute($stmt);
@@ -44,6 +44,9 @@ class DB_conn
             $_SESSION['sucess'] = "สมัครสมาชิกเรียบร้อย <a href='login.php' class='alert-link'> คลิ๊กที่นี่</a> เพื่อเข้าสู่ระบบ";
             header("location: signup.php");
         }
+        $sql = "insert into user(username	,password	,first_name	,last_name	,telephone,role)
+        values('$user', '$pass', '$first', '$last', '$tele','$role')";
+
         return ($sql);
     }
 

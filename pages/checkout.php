@@ -1,9 +1,11 @@
 <?php
-
+require_once('user_display.php');
 require_once("component.php");
 include_once("connectDB.php");
 $conn = new DB_conn;
 $sql = $conn->select_product();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +18,7 @@ include_once('topbar.php')
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Checkout</span></p>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="shop.php">Home</a></span> <span>Checkout</span></p>
             <h1 class="mb-0 bread">Checkout</h1>
           </div>
         </div>
@@ -27,37 +29,27 @@ include_once('topbar.php')
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-10 ftco-animate">
-						<form action="#" class="billing-form">
-							<h3 class="mb-4 billing-heading">Billing Details</h3>
+			<form action="#" class="billing-form">
+				<h3 class="mb-4 billing-heading">Billing Details</h3>
 	          	<div class="row align-items-end">
 	          		<div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="firstname">Firt Name</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" class="form-control" placeholder=""value = <?php echo $user_data['first_name']?>>
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="lastname">Last Name</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" class="form-control" placeholder="" value = <?php echo $user_data['last_name']?>>
 	                </div>
                 </div>
                 <div class="w-100"></div>
 		            <div class="col-md-12">
-		            	<div class="form-group">
-		            		<label for="country">State / Country</label>
-		            		<div class="select-wrap">
-		                  <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                  <select name="" id="" class="form-control">
-		                  	<option value="">France</option>
-		                    <option value="">Italy</option>
-		                    <option value="">Philippines</option>
-		                    <option value="">South Korea</option>
-		                    <option value="">Hongkong</option>
-		                    <option value="">Japan</option>
-		                  </select>
-		                </div>
-		            	</div>
+						<div class="form-group">
+						<label for="state">State / Country</label>
+						<input type="text" class="form-control" placeholder="">
+					</div>    	
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
@@ -88,7 +80,7 @@ include_once('topbar.php')
 		            <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="phone">Phone</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" class="form-control" placeholder="" value= <?php echo $user_data['telephone']; ?>>
 	                </div>
 	              </div>
 	              <div class="col-md-6">
@@ -238,6 +230,24 @@ include_once('footer.php');
 		    
 		});
 	</script>
-    
+	<!-- logout -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary"  type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+</div>
   </body>
 </html>
