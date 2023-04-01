@@ -172,7 +172,8 @@ include_once('topbar.php')
 									</div>
 								</div>
 							</div>
-							<p><a href="#" class="btn btn-primary py-3 px-4">Place an order</a></p>
+							<button class="btn btn-primary py-2 px-4" form = "user_address" name="user_address" type="submit" id="user_address">Submit</button>
+							
 						</div>
 					</div>
 				</div>
@@ -183,6 +184,7 @@ include_once('topbar.php')
 
 
 <?php
+
 include_once('footer.php');
 ?>
 
