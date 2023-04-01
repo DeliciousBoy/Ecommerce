@@ -4,9 +4,6 @@
     $conn = new DB_conn;
     $con = $conndb->conn;
     
-	
-    
-
     // $id = $_POST['id'];
     $user_id = $user_data['id'];
     $address_line1 = $_POST['address_line1'];

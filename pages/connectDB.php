@@ -104,9 +104,11 @@ class DB_conn
         return $str;
     }
     public function insert_order($user_id,$address_line1,$address_line2,$city,$postal_code,$country,$mobile){
-        $strSQL = "INSERT INTO user_address(user_id,address_line1,address_line2,city,postal_code,country,mobile)
-                values($user_id,$address_line1,$address_line2,$city,$postal_code,$country,$mobile)";
-        $str = mysqli_query($this->conn, $strSQL);
-        return $str;
+        $stmt = $this->conn->prepare("INSERT INTO user_address(user_id,address_line1,address_line2,city,postal_code,country,mobile) VALUES (?,?,?,?,?,?,?)");
+        $stmt->bind_param("issssss", $user_id, $address_line1, $address_line2, $city, $postal_code, $country, $mobile);
+        $result = $stmt->execute();
+        $stmt->close();
+        return $result;
     }
+    
 }

@@ -113,10 +113,10 @@ include_once('topbar.php')
 	            </div>
 	        </form>
 				<?php
-				$subtotal = $_SESSION['checkout'];
-				$discount = 0;
-				$delivery = 0;
-				$total = $subtotal-$discount;
+					$subtotal = $_SESSION['checkout'];
+					$discount = 0;
+					$delivery = 0;
+					$total = $subtotal-$discount;
 				?>
 				<div class="row mt-5 pt-3 d-flex">
 					<div class="col-md-6 d-flex">
