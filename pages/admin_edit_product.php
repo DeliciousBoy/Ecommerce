@@ -8,7 +8,6 @@
         $pname = $data['pName'];
         $pdetail = $data['pDetails'];
         $price = $data['pPrice'];
-        $pimage = $data['pImage'];
         $c_id = $data['id'];
     }
     
@@ -17,9 +16,8 @@
         $pname = $_POST['pname'];
         $pdetail = $_POST['pDetails'];
         $price = $_POST['pPrice'];
-        $pimage = $_POST['pImage'];
         $c_id = $_POST['id'];
-        $sql = $conn->edit_product($id,$pname, $pdetail, $price,$pimage, $c_id);
+        $sql = $conn->edit_product($id,$pname, $pdetail, $price, $c_id);
         echo $sql;
         if ($sql) {
             header('location: admin_ptest.php');
