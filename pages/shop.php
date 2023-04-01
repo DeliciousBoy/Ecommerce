@@ -7,20 +7,31 @@ include_once("connectDB.php");
 $conn = new DB_conn;
 $sql = $conn->select_product();
 $sql2 = $conn->select_category();
-//c
+$quantity = 1;
 
 if (isset($_POST['p_add'])) {
-    if (isset($_POST['p_id']) && isset($_POST['pName']) && isset($_POST['quantity'])) { // add check for quantity
-
+    if (isset($_POST['p_id']) && isset($_POST['pName']) && isset($_POST['quantity'])) {
+        //unset($_SESSION["cart"]);
         $p_id = $_POST['p_id'];
         $p_name = $_POST['pName'];
         $quantity = $_POST['quantity'];
         if (isset($_SESSION['cart'])) {
-            $count = count($_SESSION['cart']);
-            $item_array = array('p_id' => $p_id, 'pName' => $p_name, 'quantity' => $quantity); // add quantity to item array
-            $_SESSION['cart'][$count] = $item_array;
+            $cart = $_SESSION['cart'];
+            $item_exists = false;
+            foreach ($cart as &$item) {
+                if ($item['p_id'] == $p_id) {
+                    $item['quantity'] += $quantity;
+                    $item_exists = true;
+                    break;
+                }
+            }
+            if (!$item_exists) {
+                $item_array = array('p_id' => $p_id, 'pName' => $p_name, 'quantity' => $quantity);
+                $cart[] = $item_array;
+            }
+            $_SESSION['cart'] = $cart;
         } else {
-            $item_array = array('p_id' => $p_id, 'pName' => $p_name, 'quantity' => $quantity); // add quantity to item array
+            $item_array = array('p_id' => $p_id, 'pName' => $p_name, 'quantity' => $quantity);
             $_SESSION['cart'] = array($item_array);
         }
         echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";
@@ -28,6 +39,8 @@ if (isset($_POST['p_add'])) {
         echo "<script>alert('Error: Missing key(s) in POST data')</script>";
     }
 }
+
+
 
 /**/
 ?>

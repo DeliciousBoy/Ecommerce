@@ -5,7 +5,7 @@ $conn = new DB_conn;
 $p_id = $_GET['p_id'] ?? null; // get the product ID from the URL, or null if not specified
 $sql = $conn->select_singlePro($p_id); 
 $quantity = 1;
-
+//unset($_SESSION["cart"]);
 if (isset($_POST['p_add'])) {
     if (isset($_POST['p_id']) && isset($_POST['pName']) && isset($_POST['quantity'])) { // add check for quantity
         //unset($_SESSION["cart"]);
