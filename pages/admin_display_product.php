@@ -14,7 +14,6 @@
         
         if ($result && mysqli_num_rows($result) > 0) {
             $product_data = mysqli_fetch_assoc($result);
-            $product_data['p_id'];
 
         } else {
             // echo '<p>Failed to retrieve user data</p>';

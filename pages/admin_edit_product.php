@@ -2,7 +2,7 @@
     require_once('admin.php');
     include_once("connectDB.php");
     $conn = new DB_conn;
-    $sql = $conn->display_product_edit($_GET['p_id']);
+    $sql = $conn->display_product_edit($_GET['id']);
     // $row = $conn->insert_user($sql);
     while ($data = mysqli_fetch_array($sql)) {
         $pname = $data['pName'];
@@ -11,18 +11,18 @@
         $pimage = $data['pImage'];
         $c_id = $data['id'];
     }
-
-    $id = $_GET['p_id'];
+    
+    $id = $_GET['id'];
     if (isset($_POST['Pedit'])) {
         $pname = $_POST['pname'];
-        $pdetail = $_POST['lname'];
-        $price = $_POST['uname'];
-        $pimage = $_POST['telephone'];
-        $c_id = $_POST['role'];
+        $pdetail = $_POST['pDetails'];
+        $price = $_POST['pPrice'];
+        $pimage = $_POST['pImage'];
+        $c_id = $_POST['id'];
         $sql = $conn->edit_product($id,$pname, $pdetail, $price,$pimage, $c_id);
         echo $sql;
         if ($sql) {
-            header('location: admin_tables.php');
+            header('location: admin_ptest.php');
         } else {
             $_SESSION['warning'] = 'เกิดข้อผิดพลาด';
         }

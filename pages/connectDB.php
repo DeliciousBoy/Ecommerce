@@ -84,7 +84,7 @@ class DB_conn
     }
     public function edit_product($id,$pname, $pdetail, $price,$pimage, $c_id)
     {
-        $str = mysqli_query($this->conn, "UPDATE user SET pName = '$pname', pDetails ='$pdetail',pPrice= '$price',pImage = '$pimage',id='$c_id' WHERE p_id = $id ");
+        $str = mysqli_query($this->conn, "UPDATE product SET pName = '$pname', pDetails ='$pdetail',pPrice= '$price',pImage = '$pimage',id='$c_id' WHERE p_id = $id ");
         return $str;
     }
     public function select_category()
