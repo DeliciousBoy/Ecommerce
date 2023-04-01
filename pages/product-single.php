@@ -4,6 +4,7 @@ require_once("component.php");
 $conn = new DB_conn;
 $p_id = $_GET['p_id'] ?? null; // get the product ID from the URL, or null if not specified
 $sql = $conn->select_singlePro($p_id); 
+$quantity = 1;
 
 if (isset($_POST['p_add'])) {
     if (isset($_POST['p_id']) && isset($_POST['pName']) && isset($_POST['quantity'])) { // add check for quantity
@@ -37,6 +38,7 @@ include_once('topbar.php')
 <body class="goto-here">
 <section class="ftco-section">
     <?php
+    
     if ($data = mysqli_fetch_array($sql)) {
         echo singlePro($data['p_id'], $data['pName'],$data['pDetails'] ,$data['pPrice'], $quantity, $data['pImage']);
     } else {

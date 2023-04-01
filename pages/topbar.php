@@ -1,5 +1,6 @@
 <?php 
     include_once("user_display.php");
+	$quantity = 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +54,7 @@
 						<?php
 						if (isset($_SESSION['cart'])) {
 							$count = count($_SESSION['cart']);
-							echo '<spand id = "cart_count">' . $count . '</spand>';
+							echo '<spand id = "cart_count">' . ($count*$quantity) . '</spand>';
 						} else {
 							echo '<spand id="cart_count">0</spand>';
 						}

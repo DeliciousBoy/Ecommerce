@@ -11,7 +11,7 @@ $sql2 = $conn->select_category();
 
 if (isset($_POST['p_add'])) {
     if (isset($_POST['p_id']) && isset($_POST['pName']) && isset($_POST['quantity'])) { // add check for quantity
-        //unset($_SESSION["cart"]);
+
         $p_id = $_POST['p_id'];
         $p_name = $_POST['pName'];
         $quantity = $_POST['quantity'];
@@ -54,6 +54,7 @@ include_once('topbar.php')
             <div class="col-md-8 col-lg-10 order-md-last">
                 <div class="row">
                     <?php
+                    $quantity = 1;
                     if (!isset($_GET['category'])) {
                         while ($data = mysqli_fetch_array($sql)) {
                             echo component($data['p_id'], $data['pName'], $data['pPrice'], $quantity,$data['pImage']);
