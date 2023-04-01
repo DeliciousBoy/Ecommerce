@@ -80,8 +80,8 @@ function singlePro($p_id, $p_name, $p_details, $p_price, $quantity, $path_img) {
             <div class="row mt-4">
                 <div class="w-100"></div>
 
+                <form action="#" method="post" enctype="multipart/form-data" >
             <div class="input-group col-md-6 d-flex mb-3">
-            <form action="#" method="post" enctype="multipart/form-data" >
                 <span class="input-group-btn mr-2">
         
                 </span>
