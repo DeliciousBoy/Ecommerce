@@ -172,7 +172,7 @@ include_once('topbar.php')
 									</div>
 								</div>
 							</div>
-							<button class="btn btn-primary py-2 px-4" form = "user_address" name="user_address" type="submit" id="user_address">Submit</button>
+							<button class="btn btn-primary py-2 px-4" form = "user_address" name="user_address" type="submit" id="user_address">Submit<?php unset($_SESSION['cart']);?></button>
 							
 						</div>
 					</div>
