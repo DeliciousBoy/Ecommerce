@@ -41,6 +41,9 @@
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Other Pages:</h6>
                 <a class="collapse-item" href="shop.php">shop</a>
+                <a class="collapse-item" href="cart.php">cart</a>
+                <a class="collapse-item" href="checkout.php">checkout</a>
+
 
             </div>
         </div>
