@@ -10,22 +10,25 @@ $sql2 = $conn->select_category();
 //c
 
 if (isset($_POST['p_add'])) {
-    if (isset($_POST['p_id']) && isset($_POST['pName'])) {
+    if (isset($_POST['p_id']) && isset($_POST['pName']) && isset($_POST['quantity'])) { // add check for quantity
+        //unset($_SESSION["cart"]);
         $p_id = $_POST['p_id'];
         $p_name = $_POST['pName'];
-        //echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";*/
+        $quantity = $_POST['quantity'];
         if (isset($_SESSION['cart'])) {
             $count = count($_SESSION['cart']);
-            $item_array = array('p_id' => $p_id, 'p_name' => $p_name);
+            $item_array = array('p_id' => $p_id, 'pName' => $p_name, 'quantity' => $quantity); // add quantity to item array
             $_SESSION['cart'][$count] = $item_array;
         } else {
-            $item_array = array('p_id' => $p_id, 'p_name' => $p_name);
+            $item_array = array('p_id' => $p_id, 'pName' => $p_name, 'quantity' => $quantity); // add quantity to item array
             $_SESSION['cart'] = array($item_array);
         }
+        echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";
     } else {
         echo "<script>alert('Error: Missing key(s) in POST data')</script>";
     }
 }
+
 /**/
 ?>
 <!DOCTYPE html>
@@ -53,14 +56,14 @@ include_once('topbar.php')
                     <?php
                     if (!isset($_GET['category'])) {
                         while ($data = mysqli_fetch_array($sql)) {
-                            echo component($data['p_id'], $data['pName'], $data['pPrice'], $data['pImage']);
+                            echo component($data['p_id'], $data['pName'], $data['pPrice'], $quantity,$data['pImage']);
                         }
                     }
                     if (isset($_GET['category'])) {
                         $id = $_GET['category'];
                         $sql3 = $conn->select_product2($id);
                         while ($data = mysqli_fetch_array($sql3)) {
-                            echo component($data['p_id'], $data['pName'], $data['pPrice'], $data['pImage']);
+                            echo component($data['p_id'], $data['pName'], $data['pPrice'], $quantity,$data['pImage']);
                         }
                     }
                     ?>
@@ -87,7 +90,6 @@ include_once('topbar.php')
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

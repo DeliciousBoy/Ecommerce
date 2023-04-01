@@ -4,8 +4,9 @@ require_once("user.php");
 include_once("connectDB.php");
 require_once("component.php");
 $conn = new DB_conn;
+//$p_id = $_GET['p_id'] ?? null;
+//$sql = $conn->select_singlePro($p_id); 
 $sql = $conn->select_product();
-
 if (isset($_POST["remove"])) {
     $p_id = $_POST["remove"];
 
@@ -19,9 +20,6 @@ if (isset($_POST["remove"])) {
     //echo "<script>alert('Product has been removed...!')</script>";
     echo "<script>window.location = 'cart.php'</script>";
 }
-
-
-
 
 ?>
 
@@ -58,7 +56,8 @@ include_once('topbar.php')
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <?php print_r($_SESSION['cart']); 
+                        <?php print_r($_SESSION['cart']);
+                        //print_r($_SESSION['quantity']);
                         ?>
                         <tbody>
                             <?php
@@ -70,12 +69,14 @@ include_once('topbar.php')
                                 while ($data = mysqli_fetch_array($sql)) {
                                     foreach ($_SESSION['cart'] as $key => $value) {
                                         if ($value['p_id'] == $data['p_id']) {
-                                            echo cartElement($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $data['pImage']);
-                                        $total = $total + ($data['pPrice'] /* $value['quantity']*/);
+                                            $quantity = $value['quantity'];
+                                            echo cartElement($data['p_id'], $data['pName'], $data['pDetails'], $data['pPrice'], $quantity, $data['pImage']);
+                                            $total = $total + ($data['pPrice'] * $quantity);
                                         }
                                     }
                                 }
                             }
+
 
                             ?>
 
@@ -96,19 +97,15 @@ include_once('topbar.php')
                 </div>
 </section>
 
-
 <?php
 include_once('footer.php');
 ?>
-
-
 
 <!-- loader -->
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
     </svg></div>
-
 
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -136,11 +133,11 @@ include_once('footer.php');
             // Stop acting like a button
             e.preventDefault();
             // Get the field name
-            var quantity = parseInt($('#quantity').val());
+            var quantity = parseInt($('quantity').val());
 
             // If is not undefined
 
-            $('#quantity').val(quantity + 1);
+            $('quantity').val(quantity + 1);
 
 
             // Increment
@@ -160,28 +157,27 @@ include_once('footer.php');
                 $('#quantity').val(quantity - 1);
             }
         });
-
     });
 </script>
 <!--logout -->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary"  type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="logout.php">Logout</a>
-                </div>
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="logout.php">Logout</a>
             </div>
         </div>
+    </div>
 </div>
 
 </body>
+
 </html>
