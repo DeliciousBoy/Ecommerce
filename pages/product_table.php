@@ -29,7 +29,7 @@
                 }
             ?></td>
             <td class="align-middle"><a href="admin_product_edit.php?id=<?php echo $data['p_id'] ?>" class="btn btn-sm btn-primary">Edit</a></td>
-            <td class="align-middle"><a href="deluser.php?id=<?php echo $data['p_id'] ?>" class="btn btn-sm btn-primary" onclick="return confirm ('คุณต้องการลบข้อมูลใช่หรือไม่')"><i class="fa fa-times"></i></a></td>
+            <td class="align-middle"><a href="del_product.php?p_id=<?php echo $data['p_id'] ?>" class="btn btn-sm btn-primary" onclick="return confirm ('คุณต้องการลบข้อมูลใช่หรือไม่')"><i class="fa fa-times"></i></a></td>
         </tr>
     <?php $i = $i + 1;
     } ?>

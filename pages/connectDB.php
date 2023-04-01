@@ -82,6 +82,11 @@ class DB_conn
         $str = mysqli_query($this->conn, "SELECT * from product where p_id = $p_id");
         return $str;
     }
+    public function del_product($p_id){
+        $str = mysqli_query($this->conn, "DELETE FROM product WHERE p_id = $p_id ");
+        return $str;
+        
+    }
     public function edit_product($id,$pname, $pdetail, $price, $c_id)
     {
         $str = mysqli_query($this->conn, "UPDATE product SET pName = '$pname', pDetails ='$pdetail',pPrice= '$price',id='$c_id' WHERE p_id = $id ");

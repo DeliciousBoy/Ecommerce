@@ -59,7 +59,7 @@ include_once('topbar.php')
 		            <div class="col-md-12">
 						<div class="form-group">
 						<label for="state">State / Country</label>
-						<input type="text" id = "country" name = "country" class="form-control" placeholder="" >
+						<input type="text" id = "country" name = "country" class="form-control" placeholder="">
 					</div>    	
 		            </div>
 				
@@ -117,7 +117,9 @@ include_once('topbar.php')
 					$discount = 0;
 					$delivery = 0;
 					$total = $subtotal-$discount;
+					// echo $_SESSION['p_add'];
 				?>
+				
 				<div class="row mt-5 pt-3 d-flex">
 					<div class="col-md-6 d-flex">
 						<div class="cart-detail cart-total bg-light p-3 p-md-4">
