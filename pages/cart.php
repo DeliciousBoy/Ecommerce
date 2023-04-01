@@ -12,7 +12,7 @@ if (isset($_POST["remove"])) {
 
     foreach ($_SESSION["cart"] as $key => $value) {
         if ($value["p_id"] == $p_id) {
-        unset($_SESSION["cart"][$key]);
+            unset($_SESSION["cart"][$key]);
             break; // หยุดการวนลูปทันทีหลังจากลบสินค้าเดียว
         }
     }
@@ -56,9 +56,6 @@ include_once('topbar.php')
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <?php print_r($_SESSION['cart']);
-                        //print_r($_SESSION['quantity']);
-                        ?>
                         <tbody>
                             <?php
                             if (isset($_SESSION['cart'])) {
@@ -92,6 +89,9 @@ include_once('topbar.php')
                                 <span><?php echo $total ?></span>
                             </p>
                         </div>
+                        <?php
+                        $_SESSION['checkout'] = $total;
+                        ?>
                         <p class="text-center"><a href="checkout.php" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
                     </div>
                 </div>
