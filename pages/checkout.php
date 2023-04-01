@@ -1,17 +1,29 @@
 <?php
-require_once('user_display.php');
-require_once("component.php");
-include_once("connectDB.php");
-$conn = new DB_conn;
-$sql = $conn->select_product();
+	require_once('user_display.php');
+	// require_once('cart.php');
+	require_once("component.php");
+	include_once("connectDB.php");
+	$conn = new DB_conn;
+	// $sql = $conn->select_product();
+    
 
+	
+	if ($_SERVER['REQUEST_METHOD'] == "POST") {
+		$user_id = $user_data['id'];
+		$address_line1 = $_POST['address_line1'];
+		$address_line2 = $_POST['address_line2'];
+		$city = $_POST['city'];
+		$postal_code = $_POST['postal_code'];
+		$country = $_POST['country'];
+		$mobile = $_POST['mobile'];
+	}
 ?>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <?php
 include_once('topbar.php')
 ?>
-
     <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -27,66 +39,68 @@ include_once('topbar.php')
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-10 ftco-animate">
-			<form action="#" class="billing-form">
+			<form name ="user_address" id = "user_address" action="order_bill.php" class="billing-form" method="post">
 				<h3 class="mb-4 billing-heading">Billing Details</h3>
 	          	<div class="row align-items-end">
 	          		<div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="firstname">Firt Name</label>
-	                  <input type="text" class="form-control" placeholder=""value = <?php echo $user_data['first_name']?>>
+	                  <input type="text" name ="first_name" id = "first_name" class="form-control" placeholder=""value = <?php echo $user_data['first_name']?>>
 	                </div>
 	              </div>
 	              <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="lastname">Last Name</label>
-	                  <input type="text" class="form-control" placeholder="" value = <?php echo $user_data['last_name']?>>
+	                  <input type="text" name = "last_name" id = "last_name" class="form-control" placeholder="" value = <?php echo $user_data['last_name']?>>
 	                </div>
                 </div>
+				
                 <div class="w-100"></div>
 		            <div class="col-md-12">
 						<div class="form-group">
 						<label for="state">State / Country</label>
-						<input type="text" class="form-control" placeholder="">
+						<input type="text" id = "country" name = "country" class="form-control" placeholder="" >
 					</div>    	
 		            </div>
+				
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="streetaddress">Street Address</label>
-	                  <input type="text" class="form-control" placeholder="House number and street name">
+	                  <input type="text" class="form-control" id="address_line1" name = "address_line1" placeholder="House number and street name">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
-	                  <input type="text" class="form-control" placeholder="Appartment, suite, unit etc: (optional)">
+	                  <input type="text" class="form-control" id="address_line2" name="address_line2" placeholder="Appartment, suite, unit etc: (optional)">
 	                </div>
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 	                	<label for="towncity">Town / City</label>
-	                  <input type="text" class="form-control" placeholder="">
+	                  <input type="text" id="city" name ="city" class="form-control" placeholder="">
 	                </div>
 		            </div>
 		            <div class="col-md-6">
 		            	<div class="form-group">
 		            		<label for="postcodezip">Postcode / ZIP *</label>
-	                  <input type="text" class="form-control" placeholder="">
-	                </div>
+	                  <input type="text" id="postal_code" name="postal_code" class="form-control" placeholder="">
+	                </div> 
 		            </div>
 		            <div class="w-100"></div>
 		            <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="phone">Phone</label>
-	                  <input type="text" class="form-control" placeholder="" value= <?php echo $user_data['telephone']; ?>>
+	                  <input type="text" id="mobile" name = "mobile" class="form-control" placeholder="" value= <?php echo $user_data['telephone']; ?>>
 	                </div>
 	              </div>
-	              <div class="col-md-6">
+	              <!-- <div class="col-md-6">
 	                <div class="form-group">
 	                	<label for="emailaddress">Email Address</label>
 	                  <input type="text" class="form-control" placeholder="">
 	                </div>
-                </div>
+                </div> -->
                 <div class="w-100"></div>
                 <div class="col-md-12">
                 	<div class="form-group mt-4">
@@ -97,7 +111,7 @@ include_once('topbar.php')
 									</div>
                 </div>
 	            </div>
-	          </form><!-- END -->
+	        </form>
 
 	          <div class="row mt-5 pt-3 d-flex">
 	          	<div class="col-md-6 d-flex">
@@ -118,7 +132,7 @@ include_once('topbar.php')
 		    					<hr>
 		    					<p class="d-flex total-price">
 		    						<span>Total</span>
-		    						<span>$17.60</span>
+		    						<span>1</span>
 		    					</p>
 								</div>
 	          	</div>
@@ -153,15 +167,19 @@ include_once('topbar.php')
 											</div>
 										</div>
 									</div>
-									<p><a href="#"class="btn btn-primary py-3 px-4">Place an order</a></p>
+									<button class="btn btn-primary py-2 px-4 " form = "user_address" name="user_address" type="submit" id="user_address">Submit</button>
+									
+									<!-- <p><a href="order_bill.php"class="btn btn-primary py-3 px-4">Place an order</a></p> -->
 								</div>
-	          	</div>
-	          </div>
-          </div> <!-- .col-md-8 -->
-        </div>
-      </div>
-    </section> <!-- .section -->
+							</div>
+						</div>
+						
+					</div> <!-- .col-md-8 -->
+				</div>
+			</div>
+		</section> <!-- .section -->
 		
+		<!-- <button class="btn btn-primary py-2 px-4 " form = "user_address" name="user_address" type="submit" id="user_address">Submit</button> -->
 
     <?php
 include_once('footer.php');

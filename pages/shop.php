@@ -34,7 +34,7 @@ if (isset($_POST['p_add'])) {
             $item_array = array('p_id' => $p_id, 'pName' => $p_name, 'quantity' => $quantity);
             $_SESSION['cart'] = array($item_array);
         }
-        echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";
+        // echo "<script>alert('You added " . $_POST['pName'] . " to your cart')</script>";
     } else {
         echo "<script>alert('Error: Missing key(s) in POST data')</script>";
     }

@@ -103,4 +103,10 @@ class DB_conn
         $str = mysqli_query($this->conn, $strSQL);
         return $str;
     }
+    public function insert_order($user_id,$address_line1,$address_line2,$city,$postal_code,$country,$mobile){
+        $strSQL = "INSERT INTO user_address(user_id,address_line1,address_line2,city,postal_code,country,mobile)
+                values($user_id,$address_line1,$address_line2,$city,$postal_code,$country,$mobile)";
+        $str = mysqli_query($this->conn, $strSQL);
+        return $str;
+    }
 }
