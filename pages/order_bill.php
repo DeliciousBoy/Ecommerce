@@ -26,6 +26,7 @@
     // }
     
     if($sql){
+        unset($_SESSION['cart']);
         echo "<script>alert('add order สำเร็จ')</script>";
         echo "<script>window.location.href='shop.php' </script>";
     }else{
