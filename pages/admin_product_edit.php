@@ -68,7 +68,7 @@
                                         <option value='1'> Basket </option>
                                         <option value='2'> Chair </option>
                                         <option value='3'> Lamp </option>
-                                        <option value='4'> Bowl </option>
+                                        <option value='4'> Bag </option>
                                         <option value='5'> Hat </option>
 
                                     </select>
