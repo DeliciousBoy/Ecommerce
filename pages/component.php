@@ -125,7 +125,7 @@ function singlePro($p_id, $p_name, $p_details, $p_price, $quantity, $path_img) {
             <input type="hidden" name="pName" value="' . $p_name . '">
             <p>
                 <button class="add-to-cart text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></button>
-                <button class="buy-now text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><a href="cart.php?p_id=' . $p_id . '">Go to cart<span><i class="ion-ios-cart ml-1"></i></span></a></button></a>
+                <button class="buy-now text-center py-2 mr-1" type="submit"><a href="cart.php?p_id=' . $p_id . '">Go to cart<span><i class="ion-ios-cart ml-1"></i></span></a></button></a>
             </p>
         </div>
     </form>
