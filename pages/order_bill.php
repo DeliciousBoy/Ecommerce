@@ -36,7 +36,7 @@ $quantity = implode(', ', $qtr);
 // ,' country: ', $country, " mobile: ",$mobile;
 
 $sql = $conndb->insert_order($user_id, $address_line1, $address_line2, $city, $postal_code, $country, $mobile);
-$sql2 = $conndb -> insert_order2($user_id,$name,$quantity,$address_line1, $address_line2);
+$sql2 = $conndb->insert_order2($user_id,$name,$quantity,$address_line1, $address_line2);
 // if(mysqli_query($con,$sql)){
 //     printf("%d Row insert. \n",mysqli_affected_rows($con));
 // }
