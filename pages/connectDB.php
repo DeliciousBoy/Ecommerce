@@ -134,5 +134,16 @@ class DB_conn
         $str = mysqli_query($this->conn, "SELECT * from user_address");
         return $str;
     }
+    public function insert_order2($user_id,$name,$quantity,$address_line1, $address_line2){
+        $stmt = $this->conn->prepare("INSERT INTO order(user_id,name,quantity,address,address2) VALUES (?,?,?,?,?)");
+        $stmt->bind_param("isiss", $user_id,$name,$quantity,$address_line1, $address_line2);
+        $result = $stmt->execute();
+        $stmt->close();
+        return $result;
+    }
+    public function order_display2(){
+        $str = mysqli_query($this->conn, "SELECT * from order");
+        return $str;
+    }
     
 }
