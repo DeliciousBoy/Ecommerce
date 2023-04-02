@@ -51,7 +51,7 @@ function component($p_id, $p_name, $p_price, $quantity,$path_img)
             <input type="number" name="quantity" value="1" min="1" max="100">
             </div>
             <button class="add-to-cart text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></button>
-            <button class="buy-now text-center py-2" type="submit" name="p_add" id="p_add"><a href="cart.php">Go to cart</a><span><i class="ion-ios-cart ml-1"></i></span></button>
+            <button class="buy-now text-center py-2" type="submit"><a href="cart.php">Go to cart</a><span><i class="ion-ios-cart ml-1"></i></span></button>
             </form>
         </div>
     </div>
