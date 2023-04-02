@@ -51,7 +51,7 @@ function component($p_id, $p_name, $p_price, $quantity,$path_img)
             <input type="number" name="quantity" value="1" min="1" max="100">
             </div>
             <button class="add-to-cart text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></button>
-            <button class="buy-now text-center py-2" type="submit" name="p_add" id="p_add"><a href="cart.php">Buy now</a><span><i class="ion-ios-cart ml-1"></i></span></button>
+            <button class="buy-now text-center py-2" type="submit" name="p_add" id="p_add"><a href="cart.php">Go to cart</a><span><i class="ion-ios-cart ml-1"></i></span></button>
             </form>
         </div>
     </div>
@@ -82,7 +82,7 @@ function cartElement($p_id, $p_name, $p_details, $p_price, $quantity, $path_img)
 
             <td class="quantity">
             <div class="input-group mb-3">
-            <input type="text" name="quantity" class="quantity form-control input-number" value="'.$quantity.'" min="1" max="100">
+            <input type="text" name="quantity" class="quantity form-control input-number" value="'.$quantity.'" min="1" max="100" readonly>
             </div>
             </td>
 
@@ -125,7 +125,7 @@ function singlePro($p_id, $p_name, $p_details, $p_price, $quantity, $path_img) {
             <input type="hidden" name="pName" value="' . $p_name . '">
             <p>
                 <button class="add-to-cart text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></button>
-                <button class="buy-now text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><a href="cart.php?p_id=' . $p_id . '">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a></button></a>
+                <button class="buy-now text-center py-2 mr-1" type="submit" name="p_add" id="p_add"><a href="cart.php?p_id=' . $p_id . '">Go to cart<span><i class="ion-ios-cart ml-1"></i></span></a></button></a>
             </p>
         </div>
     </form>

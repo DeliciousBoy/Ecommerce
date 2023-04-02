@@ -39,9 +39,6 @@ if (isset($_POST['p_add'])) {
         echo "<script>alert('Error: Missing key(s) in POST data')</script>";
     }
 }*/
-
-
-
 /**/
 ?>
 <!DOCTYPE html>
@@ -50,7 +47,7 @@ if (isset($_POST['p_add'])) {
 include_once('topbar.php')
 ?>
 
-<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('images/cn.avif');">
     <div class="container">
         <div class="row no-gutters slpNameer-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">

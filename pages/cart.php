@@ -16,20 +16,17 @@ if (isset($_POST["remove"])) {
             break; // หยุดการวนลูปทันทีหลังจากลบสินค้าเดียว
         }
     }
-
     //echo "<script>alert('Product has been removed...!')</script>";
     echo "<script>window.location = 'cart.php'</script>";
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php
 include_once('topbar.php')
 ?>
 
-<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('images/resos.jpg');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
@@ -180,7 +177,5 @@ include_once('footer.php');
         </div>
     </div>
 </div>
-
 </body>
-
 </html>
