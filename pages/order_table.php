@@ -10,17 +10,17 @@
     while ($data = mysqli_fetch_array($sql)) {
     ?>
         <tr>
-            <td class="align-middle"><?php echo $data['id'] ?></td>
+            <td class="align-middle"><?php echo $data['order_id'] ?></td>
             <td class="align-middle"><?php echo $data['user_id'] ?></td>
-            <td class="align-middle"><?php echo $data['address_line1'] ?></td>
-            <td class="align-middle"><?php echo $data['address_line2'] ?></td>
+            <td class="align-middle"><?php echo $data['name'] ?></td>
+            <td class="align-middle"><?php echo $data['quantity'] ?></td>
+            <td class="align-middle"><?php echo $data['address'] ?></td>
+            <td class="align-middle"><?php echo $data['address2'] ?></td>
             <td class="align-middle"><?php echo $data['city'] ?></td>
             <td class="align-middle"><?php echo $data['postal_code'] ?></td>
             <td class="align-middle"><?php echo $data['country'] ?></td>
             <td class="align-middle"><?php echo $data['mobile'] ?></td>
-
-            <!-- <td class="align-middle"><a href="admin_user_edit.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary">Edit</a></td> -->
-            <!-- <td class="align-middle"><a href="deluser.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-primary" onclick="return confirm ('คุณต้องการลบข้อมูลใช่หรือไม่')"><i class="fa fa-times"></i></a></td> -->
+            <td class="align-middle"><a href="del_order.php?order_id=<?php echo $data['order_id'] ?>" class="btn btn-sm btn-primary" onclick="return confirm ('คุณต้องการลบข้อมูลใช่หรือไม่')"><i class="fa fa-times"></i></a></td>
         </tr>
     <?php $i = $i + 1;
     } ?>

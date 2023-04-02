@@ -46,24 +46,30 @@
                                         <tr>
                                             <th>order id</th>
                                             <th>user_id</th>
+                                            <th>product name</th>
+                                            <th>quantity</th>
                                             <th>address line1</th>
                                             <th>address line2</th>
                                             <th>city</th>
                                             <th>postal code</th>
                                             <th>country</th>
                                             <th>mobile</th>
+                                            <th>delete</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>order id</th>
                                             <th>user_id</th>
+                                            <th>product name</th>
+                                            <th>quantity</th>
                                             <th>address line1</th>
                                             <th>address line2</th>
                                             <th>city</th>
                                             <th>postal code</th>
                                             <th>country</th>
                                             <th>mobile</th>
+                                            <th>delete</th>
                                         </tr>
                                     </tfoot>
                                     <?php include_once('order_table.php'); ?>

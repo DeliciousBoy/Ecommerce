@@ -123,27 +123,29 @@ class DB_conn
         $str = mysqli_query($this->conn, $strSQL);
         return $str;
     }
-    public function insert_order($user_id,$address_line1,$address_line2,$city,$postal_code,$country,$mobile){
-        $stmt = $this->conn->prepare("INSERT INTO user_address(user_id,address_line1,address_line2,city,postal_code,country,mobile) VALUES (?,?,?,?,?,?,?)");
-        $stmt->bind_param("issssss", $user_id, $address_line1, $address_line2, $city, $postal_code, $country, $mobile);
-        $result = $stmt->execute();
-        $stmt->close();
-        return $result;
-    }
+    // public function insert_order($user_id,$address_line1,$address_line2,$city,$postal_code,$country,$mobile){
+    //     $stmt = $this->conn->prepare("INSERT INTO `order` (user_id, name, quantity, address, address2,city,country,postal_code,mobile) VALUES (?, ?, ?, ?, ?,?,?,?,?)");
+    //     $stmt->bind_param("issssssss", $user_id,$name,$quantity,$address_line1, $address_line2,$city, $postal_code, $country, $mobile);
+    //     $result = $stmt->execute();
+    //     $stmt->close();
+    //     return $result;
+    // }
     public function order_display(){
-        $str = mysqli_query($this->conn, "SELECT * from user_address");
+        $str = mysqli_query($this->conn, "SELECT * FROM `order`");
         return $str;
     }
-    public function insert_order2($user_id,$name,$quantity,$address_line1, $address_line2,$city, $postal_code, $country, $mobile){
+    public function insert_order($user_id,$name,$quantity,$address_line1, $address_line2,$city, $postal_code, $country, $mobile){
         $stmt = $this->conn->prepare("INSERT INTO `order` (user_id, name, quantity, address, address2,city,country,postal_code,mobile) VALUES (?, ?, ?, ?, ?,?,?,?,?)");
         $stmt->bind_param("issssssss", $user_id,$name,$quantity,$address_line1, $address_line2,$city, $postal_code, $country, $mobile);
         $result = $stmt->execute();
         $stmt->close();
         return $result;
     }
-    public function order_display2(){
-        $str = mysqli_query($this->conn, "SELECT * from order");
+    public function del_order($order_id){
+        $str = mysqli_query($this->conn, "DELETE FROM `order` WHERE `order_id` = $order_id ");
         return $str;
+        
     }
+
     
 }
