@@ -82,7 +82,7 @@ function cartElement($p_id, $p_name, $p_details, $p_price, $quantity, $path_img)
 
             <td class="quantity">
             <div class="input-group mb-3">
-            <input type="text" name="quantity" class="quantity form-control input-number" value="'.$quantity.'" min="1" max="100">
+            <input type="text" name="quantity" class="quantity form-control input-number" value="'.$quantity.'" min="1" max="100" readonly>
             </div>
             </td>
 
