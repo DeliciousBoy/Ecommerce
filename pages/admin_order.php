@@ -44,7 +44,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ลำดับ</th>
+                                            <th>order id</th>
                                             <th>user_id</th>
                                             <th>address line1</th>
                                             <th>address line2</th>
@@ -52,12 +52,11 @@
                                             <th>postal code</th>
                                             <th>country</th>
                                             <th>mobile</th>
-                                            <th>order</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>ลำดับ</th>
+                                            <th>order id</th>
                                             <th>user_id</th>
                                             <th>address line1</th>
                                             <th>address line2</th>
@@ -65,8 +64,6 @@
                                             <th>postal code</th>
                                             <th>country</th>
                                             <th>mobile</th>
-                                            <th>order</th>
-
                                         </tr>
                                     </tfoot>
                                     <?php include_once('order_table.php'); ?>

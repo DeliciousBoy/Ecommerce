@@ -30,7 +30,7 @@
         echo "<script>window.location.href='shop.php' </script>";
     }else{
         echo "<script>alert('เกิดข้อผิดพลาด')</script>";
-        echo "<script>window.location.href='shop.php' </script>";
+        // echo "<script>window.location.href='shop.php' </script>";
     }
        
     
