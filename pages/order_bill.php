@@ -43,7 +43,7 @@ $sql = $conndb->insert_order($user_id,$name,$quantity,$address_line1, $address_l
 
 if ($sql) {
     unset($_SESSION['cart']);
-    echo "<script>alert('add order สำเร็จ')</script>";
+    echo "<script>alert('order success ')</script>";
     echo "<script>window.location.href='shop.php' </script>";
 } else {
     echo "<script>alert('เกิดข้อผิดพลาด')</script>";
