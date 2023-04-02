@@ -134,9 +134,9 @@ class DB_conn
         $str = mysqli_query($this->conn, "SELECT * from user_address");
         return $str;
     }
-    public function insert_order2($user_id,$name,$quantity,$address_line1, $address_line2){
-        $stmt = $this->conn->prepare("INSERT INTO `order` (user_id, name, quantity, address, address2) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("issss", $user_id,$name,$quantity,$address_line1, $address_line2);
+    public function insert_order2($user_id,$name,$quantity,$address_line1, $address_line2,$city, $postal_code, $country, $mobile){
+        $stmt = $this->conn->prepare("INSERT INTO `order` (user_id, name, quantity, address, address2,city,country,postal_code,mobile) VALUES (?, ?, ?, ?, ?,?,?,?,?)");
+        $stmt->bind_param("issssssss", $user_id,$name,$quantity,$address_line1, $address_line2,$city, $postal_code, $country, $mobile);
         $result = $stmt->execute();
         $stmt->close();
         return $result;
