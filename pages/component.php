@@ -41,7 +41,7 @@ function component($p_id, $p_name, $p_price, $quantity,$path_img)
             <div class="overlay"></div>
         </a>
         <div class="text py-3 pb-4 px-3">
-        <form action="#" method="post" enctype="multipart/form-data" >
+        <form method="post" enctype="multipart/form-data" >
             <input type="hidden" name="pName" value="' . $p_name . '">
             <h1 class="pDetails">' . $p_name. '</h1>
             <p class="pPrice">Price: ' . $p_price . '</p>
@@ -61,7 +61,7 @@ function component($p_id, $p_name, $p_price, $quantity,$path_img)
 
 
 function cartElement($p_id, $p_name, $p_details, $p_price, $quantity, $path_img) {
-    $element = '<form action="#" method="post">
+    $element = '<form method="post">
         <tr class="text-center">
             <td>
                 <button class="product-remove" type="submit" name="remove" value="' . $p_id . '" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;">
@@ -112,7 +112,7 @@ function singlePro($p_id, $p_name, $p_details, $p_price, $quantity, $path_img) {
             <div class="row mt-4">
                 <div class="w-100"></div>
 
-                <form action="#" method="post" enctype="multipart/form-data" >
+                <form method="post" enctype="multipart/form-data" >
             <div class="input-group col-md-6 d-flex mb-3">
                 <span class="input-group-btn mr-2">
         
