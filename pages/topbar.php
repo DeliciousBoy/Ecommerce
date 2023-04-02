@@ -1,11 +1,12 @@
-<?php 
-    include_once("user_display.php");
-	$quantity = 1;
+<?php
+include_once("user_display.php");
+$quantity = 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+	<link rel="icon" href="images/LOGO-OTOP.png">
 	<title>OTOP</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -54,17 +55,18 @@
 						<?php
 						if (isset($_SESSION['cart'])) {
 							$count = count($_SESSION['cart']);
-							echo '<spand id = "cart_count">' . ($count*$quantity) . '</spand>';
+							echo '<spand id = "cart_count">' . ($count * $quantity) . '</spand>';
 						} else {
 							echo '<spand id="cart_count">0</spand>';
 						}
 						?>
 					</a></li>
-				<?php //echo $user_data['first_name'] . ' ' . $user_data['last_name'] ?>
+				<?php //echo $user_data['first_name'] . ' ' . $user_data['last_name'] 
+				?>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $user_data['first_name'].' '.$user_data['last_name'] ?></span>
-							<!-- <img class="img-profile rounded-circle" src="img/undraw_profile.svg"> -->
+						<span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $user_data['first_name'] . ' ' . $user_data['last_name'] ?></span>
+						<!-- <img class="img-profile rounded-circle" src="img/undraw_profile.svg"> -->
 					</a>
 					<!-- Dropdown - User Information -->
 					<div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -75,10 +77,10 @@
 						<a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
 					</div>
 				</li>
-				
+
 			</ul>
 		</div>
-		
+
 	</div>
 </nav>
 </body>
