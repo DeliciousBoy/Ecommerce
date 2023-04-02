@@ -23,7 +23,7 @@
                 } else if ($data['id'] == 3) {
                     echo 'Lamp';
                 } else if ($data['id'] == 4) {
-                    echo 'Bowl';
+                    echo 'Bag';
                 } else if ($data['id'] == 5) {
                     echo 'Hat';
                 }

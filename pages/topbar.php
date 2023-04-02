@@ -70,10 +70,7 @@ $quantity = 1;
 					</a>
 					<!-- Dropdown - User Information -->
 					<div class="dropdown-menu" aria-labelledby="dropdown04">
-						<a class="dropdown-item" href="#">Profile</a>
-						<a class="dropdown-item" href="#">Settings</a>
-						<a class="dropdown-item" href="#">Activity Log</a>
-						<div class="dropdown-divider"></div>
+						
 						<a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
 					</div>
 				</li>
