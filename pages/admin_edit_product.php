@@ -20,7 +20,7 @@
         $sql = $conn->edit_product($id,$pname, $pdetail, $price, $c_id);
         echo $sql;
         if ($sql) {
-            header('location: admin_ptest.php');
+            header('location: admin_product_table.php');
         } else {
             $_SESSION['warning'] = 'เกิดข้อผิดพลาด';
         }
