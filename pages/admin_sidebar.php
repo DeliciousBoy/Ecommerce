@@ -55,7 +55,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="admin_ptest.php">
+        <a class="nav-link" href="admin_product_table.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Edit Product</span></a>
     </li>
