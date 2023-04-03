@@ -45,15 +45,15 @@
                             <h3 class="mt-5">แก้ไขข้อมูลสมาชิกไอดี: <?php echo $id ?></h3>
                             <form method="POST">
                                 <div class="mb-3">
-                                    <label for="fname" class="form-label">ชื่อ:</label>
+                                    <label for="fname" class="form-label">first name:</label>
                                     <input type="text" class="form-control" id="fname" name="fname" value=<?php echo $fname ?>>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="lname" class="form-label">นามสกุล:</label>
+                                    <label for="lname" class="form-label">last name:</label>
                                     <input type="text" class="form-control" id="lname" name="lname" value=<?php echo $lname ?>>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="uname" class="form-label">UserName:</label>
+                                    <label for="uname" class="form-label">user name:</label>
                                     <input type="text" class="form-control" id="uname" name="uname" value=<?php echo $uname; ?>>
                                 </div>
                                 <div class="mb-3">

@@ -1,6 +1,7 @@
 <?php 
     require_once('admin_edit_product.php');
     require_once('admin.php'); 
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,8 +64,7 @@
                                 <div class="mb-3">
                                     <label for="id" class="form-label">category: </label>
                                     <select class="form-control" name="id" id="id">
-                                        <!-- <option value =""> role select</option> -->
-                                        
+                                        <!-- <option value =id>---select category--</option> -->
                                         <option value='1'> Basket </option>
                                         <option value='2'> Chair </option>
                                         <option value='3'> Lamp </option>
