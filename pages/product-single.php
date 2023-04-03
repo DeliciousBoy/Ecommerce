@@ -1,4 +1,5 @@
 <?php
+require_once('user.php');
 include_once('connectDB.php');
 require_once("component.php");  
 $conn = new DB_conn;
