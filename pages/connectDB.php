@@ -41,11 +41,11 @@ class DB_conn
         else {
             $sql = "insert into user(username	,password	,first_name	,last_name	,telephone,role)
                 values('$user', '$pass', '$first', '$last', '$tele','$role')";
-            $_SESSION['sucess'] = "สมัครสมาชิกเรียบร้อย <a href='login.php' class='alert-link'> คลิ๊กที่นี่</a> เพื่อเข้าสู่ระบบ";
-            header("location: signup.php");
+            $_SESSION['sucess'] = "สมัครสมาชิกเรียบร้อย";
+            header("location: login.php");
         }
-        $sql = "insert into user(username	,password	,first_name	,last_name	,telephone,role)
-        values('$user', '$pass', '$first', '$last', '$tele','$role')";
+        // $sql = "insert into user(username	,password	,first_name	,last_name	,telephone,role)
+        // values('$user', '$pass', '$first', '$last', '$tele','$role')";
 
         return ($sql);
     }
