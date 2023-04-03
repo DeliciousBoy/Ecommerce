@@ -44,27 +44,27 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ลำดับ</th>
-                                            <th>ชื่อสินค้า</th>
-                                            <th>รายละเอียดสินค้า</th>
-                                            <th>ราคา</th>
-                                            <th>รูปภาพ</th>
-                                            <th>ชนิดสินค้า</th>
-                                            <th>แก้ไข</th>
-                                            <th>ลบ</th>
+                                            <th>index</th>
+                                            <th>product name</th>
+                                            <th>description</th>
+                                            <th>price</th>
+                                            <th>image</th>
+                                            <th>category</th>
+                                            <th>edit</th>
+                                            <th>delete</th>
                                             
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>ลำดับ</th>
-                                            <th>ชื่อสินค้า</th>
-                                            <th>รายละเอียดสินค้า</th>
-                                            <th>ราคา</th>
-                                            <th>รูปภาพ</th>
-                                            <th>ชนิดสินค้า</th>
-                                            <th>แก้ไข</th>
-                                            <th>ลบ</th>
+                                            <th>index</th>
+                                            <th>product name</th>
+                                            <th>description</th>
+                                            <th>price</th>
+                                            <th>image</th>
+                                            <th>category</th>
+                                            <th>edit</th>
+                                            <th>delete</th>
                                         </tr>
                                     </tfoot>
                                     <?php include_once('product_table.php'); ?>

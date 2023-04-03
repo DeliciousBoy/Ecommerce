@@ -44,27 +44,27 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>ลำดับ</th>
-                                            <th>ชื่อ</th>
-                                            <th>นามสุกล</th>
+                                            <th>index</th>
+                                            <th>first name</th>
+                                            <th>last name</th>
                                             <th>username</th>
                                             <th>telephone</th>
                                             <th>role</th>
-                                            <th>แก้ไข</th>
-                                            <th>ลบ</th>
+                                            <th>edit</th>
+                                            <th>delete</th>
                                             
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>ลำดับ</th>
-                                            <th>ชื่อ</th>
-                                            <th>นามสุกล</th>
+                                            <th>index</th>
+                                            <th>first name</th>
+                                            <th>last name</th>
                                             <th>username</th>
                                             <th>telephone</th>
                                             <th>role</th>
-                                            <th>แก้ไข</th>
-                                            <th>ลบ</th>
+                                            <th>edit</th>
+                                            <th>delete</th>
                                         </tr>
                                     </tfoot>
                                     <?php include_once('customer_table.php'); ?>
