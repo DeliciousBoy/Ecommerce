@@ -16,6 +16,7 @@
 		$postal_code = $_POST['postal_code'];
 		$country = $_POST['country'];
 		$mobile = $_POST['mobile'];
+		$Price =$_POST['TotalPrice'];
 	}
 ?>
  
@@ -140,6 +141,7 @@ include_once('topbar.php')
 							<p class="d-flex total-price">
 								<span>Total</span>
 								<span><?php echo $total ?></span>
+								<input type="hidden" id="TotalPrice" name ="TotalPrice" class="form-control" placeholder="" value="<?php echo $total;?>">
 							</p>
 						</div>
 					</div>

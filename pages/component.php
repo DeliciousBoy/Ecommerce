@@ -86,12 +86,13 @@ function cartElement($p_id, $p_name, $p_details, $p_price, $quantity, $path_img)
             </div>
             </td>
 
-
+            <input type="hidden" name="TotalPrice" class="quantity form-control input-number" value="'.($p_price * $quantity).'" min="1" max="100" readonly>
             <td class="total">$'.($p_price * $quantity).'</td>
-
+            
         </tr>
     </form>
     ';
+
     return $element;
 }
 
